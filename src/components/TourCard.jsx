@@ -81,7 +81,8 @@ const TourCard = ({ tour }) => {
   return (
     <Link to={`/tour/${tour.id}`} style={{ textDecoration: "none", color: "inherit" }}>
       <Card>
-        <Image src={tour.image} alt={tour.title[lang]} />
+        <Image src={`${import.meta.env.BASE_URL}${tour.image}`} alt={tour.title[lang]} />
+
         <Info>
           <Title>{tour.title[lang]}</Title>
           {tour.labels && tour.labels.length > 0 && (
