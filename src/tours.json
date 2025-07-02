@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "hy": "Ատլանտիս ջրաշխարհի տոմսեր",
+      "ru": "Билеты в аквапарк Атлантис",
+      "en": "Tickets to Atlantis Waterpark"
+    },
+    "image": "atlantis.jpg",
+    "price": "325",
+    "currency": "AED",
+    "duration": {
+      "hy": "Ամբողջ օր",
+      "ru": "Полный день",
+      "en": "Full Day"
+    },
+    "labels": ["popular"],
+    "icons": ["ticket", "family"]
+  },
+  {
+    "id": 2,
+    "title": {
+      "hy": "Ferrari World™ զբոսայգու տոմսեր, Յաս կղզի, Աբու Դաբի",
+      "ru": "Билеты в парк Ferrari World™ остров Яс, Абу-Даби",
+      "en": "Tickets to Ferrari World™ Park, Yas Island, Abu Dhabi"
+    },
+    "image": "ferrari.jpg",
+    "price": "470",
+    "currency": "AED",
+    "duration": {
+      "hy": "Ամբողջ օր",
+      "ru": "Полный день",
+      "en": "Full Day"
+    },
+    "labels": ["special_offer"],
+    "icons": ["ticket", "adventure"]
+  },
+  {
+    "id": 3,
+    "title": {
+      "hy": "Wild Wadi ջրաշխարհի տոմսեր, Դուբայ",
+      "ru": "Билеты в аквапарк Wild Wadi Дубай",
+      "en": "Tickets to Wild Wadi Waterpark, Dubai"
+    },
+    "image": "wilddubai.jpg",
+    "price": "295",
+    "currency": "AED",
+    "duration": {
+      "hy": "Կես օր",
+      "ru": "Полдня",
+      "en": "Half Day"
+    },
+    "labels": [],
+    "icons": ["ticket", "couples"]
+  },
+  {
+    "id": 4,
+    "title": {
+      "hy": "La Perle շոուի տոմսեր, Դուբայ",
+      "ru": "Билеты шоу La Perle Дубай",
+      "en": "Tickets to La Perle Show Dubai"
+    },
+    "image": "laperle.jpg",
+    "price": "400",
+    "currency": "AED",
+    "duration": {
+      "hy": "Երեկո",
+      "ru": "Вечер",
+      "en": "Evening"
+    },
+    "labels": ["popular"],
+    "icons": ["ticket", "entertainment"]
+  },
+  {
+    "id": 5,
+    "title": {
+      "hy": "Motiongate զբոսայգու տոմսեր, Դուբայ",
+      "ru": "Билеты в парк Моушенгейт Дубай",
+      "en": "Tickets to Motiongate Park Dubai"
+    },
+    "image": "motiongate.jpg",
+    "price": "350",
+    "currency": "AED",
+    "duration": {
+      "hy": "Ամբողջ օր",
+      "ru": "Полный день",
+      "en": "Full Day"
+    },
+    "labels": ["bestseller"],
+    "icons": ["ticket", "adventure"]
+  },
+  {
+    "id": 6,
+    "title": {
+      "hy": "SeaWorld զբոսայգու տոմսեր, Աբու Դաբի",
+      "ru": "Билеты в парк SeaWorld, Абу-Даби",
+      "en": "Tickets to SeaWorld Park, Abu Dhabi"
+    },
+    "image": "seaworld.jpg",
+    "price": "360",
+    "currency": "AED",
+    "duration": {
+      "hy": "Ամբողջ օր",
+      "ru": "Полный день",
+      "en": "Full Day"
+    },
+    "labels": ["popular"],
+    "icons": ["ticket", "family"]
+  }
+]
+
+

@@ -1,0 +1,95 @@
+{
+  "tours": "Tours",
+  "from": "From",
+  "popular": "Popular",
+  "special_offer": "Special Offer",
+  "bestseller": "Bestseller",
+
+  "excursions": "Excursions",
+  "guide": "Guide",
+  "contacts": "Contacts",
+  "blog": "Blog",
+  "login": "Login",
+
+
+  "footer": {
+    "guide": "Guide",
+    "intro": "Introduction",
+    "attractions": "Dubai Attractions",
+    "transport": "Transport",
+    "news": "News",
+    "entertainment": "Entertainment",
+    "routes": "Routes",
+    "mall": "Shopping Malls",
+    "shopping": "Shopping",
+    "restaurants": "Dubai Restaurants",
+    "nightlife": "Nightlife",
+
+    "about": "About Us",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "contacts": "Contacts",
+
+    "excursions": "Excursions in the UAE",
+    "blog": "Blog",
+    "faq": "FAQ",
+
+    "social": "Social Media",
+    "madeInDubai": "Made in Dubai, UAE"
+  },
+  "toursPage": {
+    "title": "Tripgrip – excursions in Dubai",
+    "subtitle": "Best selection of tours, excursions, tickets and entertainment in the UAE. Easy payment",
+    "safe_payment": "Secure payment via Visa, MasterCard and Apple Pay",
+    "official_partners": "On the UAE market since 2015. Official partners",
+    "special_offers": "Great deals, promotions and discounts"
+  },
+  
+  
+    "description": {
+      "title": "Best Tours in Dubai and the UAE",
+      "intro1": "Travel and tourism are all about new experiences, impressions, and emotions. They are different sides of discovery. It’s the human desire for the unknown that drives us.",
+      "intro2": "The UAE fully understands the importance of tourism and does everything to develop it. Dubai is the flagship of tourism in the Middle East.",
+      "dubai_text1": "Dubai amazes travelers with marvels created in just two decades.",
+      "dubai_text2": "It’s hard to choose where to start exploring. So where to go and what to see?",
+      "subtitle": "Dubai Tours 2025",
+      "overview": "Start with a city tour in Russian: Burj Khalifa, fountains, Dubai Mall, Palm Jumeirah, Atlantis hotel, Burj Al Arab, museum, and gold market.",
+      "cruise": "Continue with a cruise on a traditional 'Dhow' boat: dinner, entertainment, and views of Dubai Marina skyscrapers.",
+      "safari": "Experience a desert safari with dunes, camels, bedouins, and a dinner show.",
+      "kids_parks": "For kids: Legoland, waterpark, or Kidzania – a city of professions. Book cheaper on our website.",
+      "waterparks": "Many waterparks await: Aquaventure, Laguna, Wild Wadi, and more.",
+      "activities": "More: tours to the northern emirates, Indian Ocean, hot air balloons, dune buggies, cruises, ziplines, and more.",
+      "custom_tour": "You can book a personal tour or a full entertainment program tailored to your needs.",
+      "ending": "Dubai offers endless ways to relax – it’s all up to your imagination!",
+      "select_tour": "Select a Tour"
+    },
+    
+    
+      "filters": {
+        "sorting": "Sorting",
+        "sort_by": "Sort by",
+        "deals_first": "Deals first",
+        "newest_first": "Newest first",
+        "popular_first": "Popular first",
+        "low_to_high": "Price: low to high",
+        "high_to_low": "Price: high to low",
+        "tour_category": "Tour category",
+        "select_category": "Select category",
+        "category_overview": "Overview",
+        "category_adventure": "Adventure",
+        "category_tickets": "Tickets",
+        "category_food": "Food & Gastronomy",
+        "category_family": "Family entertainment",
+        "by_emirate": "By emirate",
+        "select_emirate": "Select emirate",
+        "tour_type": "Tour type",
+        "group": "Group",
+        "individual": "Individual",
+        "clear": "Clear"
+      }
+    }
+    
+    
+  
+  
+
