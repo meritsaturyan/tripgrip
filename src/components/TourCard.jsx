@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useCurrency } from "../CurrencyContext";
+import { basePath } from "../utils/basePath";
 
 const Card = styled.div`
   border: 1px solid #ddd;
@@ -78,10 +79,19 @@ const TourCard = ({ tour }) => {
   const { currency } = useCurrency();
   const lang = i18n.language;
 
+  const isProd = import.meta.env.MODE === 'production';
+  const basePath = isProd ? '/tripgrip/' : '';
+
+
+
+
   return (
     <Link to={`/tour/${tour.id}`} style={{ textDecoration: "none", color: "inherit" }}>
       <Card>
-        <Image src={`${import.meta.env.BASE_URL}${tour.image}`} alt={tour.title[lang]} />
+      <Image src={`${basePath}${tour.image}`} alt={tour.title[lang]} />
+
+
+
 
         <Info>
           <Title>{tour.title[lang]}</Title>
