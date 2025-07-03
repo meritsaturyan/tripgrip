@@ -66,19 +66,20 @@ const DescriptionBlock = () => {
       <p>{t("description.intro2")}</p>
 
       <img
-        src="/anapat.jpg"
-        alt="Anapat"
-        style={{
-          width: '400px',
-          maxWidth: '100%',
-          height: 'auto',
-          marginTop: '30px',
-          borderRadius: '8px',
-          display: 'block',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-        }}
-      />
+  src="/tripgrip/anapat.jpg"
+  alt="Anapat"
+  style={{
+    width: '400px',
+    maxWidth: '100%',
+    height: 'auto',
+    marginTop: '30px',
+    borderRadius: '8px',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  }}
+/>
+
 
       <p>{t("description.dubai_text1")}</p>
       <p>{t("description.dubai_text2")}</p>
@@ -90,7 +91,8 @@ const DescriptionBlock = () => {
       <p>{t("description.safari")}</p>
       <p>{t("description.kids_parks")}</p>
 
-      <img src="/dubai.jpg" alt="Dubai" className="image" />
+      <img src="/tripgrip/dubai.jpg" alt="Dubai" className="image" />
+
 
       <p>{t("description.waterparks")}</p>
       <p>{t("description.activities")}</p>

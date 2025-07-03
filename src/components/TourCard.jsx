@@ -90,7 +90,8 @@ const TourCard = ({ tour }) => {
   return (
     <Link to={`/tour/${tour.id}`} style={{ textDecoration: "none", color: "inherit" }}>
       <Card>
-        <Image src={`${basePath}${tour.image}`} alt={tour.title[lang]} />
+      <Image src={`/tripgrip/${tour.image}`} alt={tour.title[lang]} />
+
         <Info>
           <Title>{tour.title[lang]}</Title>
           {tour.labels && tour.labels.length > 0 && (
