@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FaSearch, FaUser, FaBars } from "react-icons/fa";
 import LangSelector from "../components/LangSelector";
 import { useCurrency } from "../CurrencyContext";
+import { basePath } from "../utils/basePath";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -110,55 +111,55 @@ const BurgerButton = styled.button`
 `;
 
 const Header = () => {
-  const { t } = useTranslation();
-  const { currency, setCurrency } = useCurrency();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { t } = useTranslation();
+    const { currency, setCurrency } = useCurrency();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleCurrencyChange = (e) => {
-    const selected = e.target.value;
-    setCurrency(selected);
-    localStorage.setItem("currency", selected);
-  };
+    const handleCurrencyChange = (e) => {
+        const selected = e.target.value;
+        setCurrency(selected);
+        localStorage.setItem("currency", selected);
+    };
 
-  return (
-    <>
-      <HeaderContainer>
-        <LogoContainer>
-          <LogoImg src="/tripgriplogo.jpeg" alt="Logo" />
-        </LogoContainer>
+    return (
+        <>
+            <HeaderContainer>
+                <LogoContainer>
+                    <LogoImg src={`${basePath}tripgriplogo.jpeg`} alt="Logo" />
+                </LogoContainer>
 
-        <Nav>
-          <NavLink>{t("excursions")}</NavLink>
-          <NavLink>{t("guide")}</NavLink>
-          <NavLink>{t("contacts")}</NavLink>
-          <NavLink>{t("blog")}</NavLink>
-        </Nav>
+                <Nav>
+                    <NavLink>{t("excursions")}</NavLink>
+                    <NavLink>{t("guide")}</NavLink>
+                    <NavLink>{t("contacts")}</NavLink>
+                    <NavLink>{t("blog")}</NavLink>
+                </Nav>
 
-        <Icons>
-          <FaSearch />
-          <FaUser />
-          <LangSelector />
-          <CurrencySelector value={currency} onChange={handleCurrencyChange}>
-            <option value="AED">AED</option>
-            <option value="AMD">AMD</option>
-            <option value="USD">USD</option>
-          </CurrencySelector>
-          <BurgerButton onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
-            <FaBars />
-          </BurgerButton>
-        </Icons>
-      </HeaderContainer>
+                <Icons>
+                    <FaSearch />
+                    <FaUser />
+                    <LangSelector />
+                    <CurrencySelector value={currency} onChange={handleCurrencyChange}>
+                        <option value="AED">AED</option>
+                        <option value="AMD">AMD</option>
+                        <option value="USD">USD</option>
+                    </CurrencySelector>
+                    <BurgerButton onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
+                        <FaBars />
+                    </BurgerButton>
+                </Icons>
+            </HeaderContainer>
 
-      {isMobileMenuOpen && (
-        <MobileMenu>
-          <NavLink>{t("excursions")}</NavLink>
-          <NavLink>{t("guide")}</NavLink>
-          <NavLink>{t("contacts")}</NavLink>
-          <NavLink>{t("blog")}</NavLink>
-        </MobileMenu>
-      )}
-    </>
-  );
+            {isMobileMenuOpen && (
+                <MobileMenu>
+                    <NavLink>{t("excursions")}</NavLink>
+                    <NavLink>{t("guide")}</NavLink>
+                    <NavLink>{t("contacts")}</NavLink>
+                    <NavLink>{t("blog")}</NavLink>
+                </MobileMenu>
+            )}
+        </>
+    );
 };
 
 export default Header;

@@ -1,0 +1,19 @@
+total 3480
+-rw-------@ 1 meritsaturyan  staff   86716  1 июл 15:42 anapat.jpg
+-rw-------@ 1 meritsaturyan  staff   10993  1 июл 21:55 applepay.png
+-rw-------@ 1 meritsaturyan  staff  167409 27 июн 20:29 atlantis.jpg
+-rw-------@ 1 meritsaturyan  staff  113639  1 июл 15:52 dubai.jpg
+-rw-------@ 1 meritsaturyan  staff     680  1 июл 17:24 facebook.svg
+-rw-------@ 1 meritsaturyan  staff  349739 27 июн 20:30 ferrari.jpg
+-rw-r--r--@ 1 meritsaturyan  staff  136042  1 июл 17:10 fotofooter.jpeg
+-rw-------@ 1 meritsaturyan  staff     813  1 июл 17:27 instagram.svg
+-rw-------@ 1 meritsaturyan  staff  349186 29 июн 14:27 laperle.jpg
+-rw-------@ 1 meritsaturyan  staff   30079  1 июл 21:52 mastercard.png
+-rw-------@ 1 meritsaturyan  staff  198671 29 июн 14:28 motiongate.jpg
+-rw-------@ 1 meritsaturyan  staff   60258 29 июн 14:30 seaworld.jpg
+-rw-------@ 1 meritsaturyan  staff    3487  1 июл 21:51 tls.png
+-rw-r--r--@ 1 meritsaturyan  staff  163596 27 июн 17:56 tripgriplogo.jpeg
+-rw-------@ 1 meritsaturyan  staff    3145  1 июл 21:54 visa.png
+-rw-------@ 1 meritsaturyan  staff    2481  1 июл 17:29 vk.svg
+-rw-------@ 1 meritsaturyan  staff   66354 27 июн 20:31 wilddubai.jpg
+-rw-------@ 1 meritsaturyan  staff    1036  1 июл 17:25 youtube.svg

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import { basePath } from "../utils/basePath";
+
 
 const FooterContainer = styled.footer`
   background-color: #fff;
@@ -80,69 +82,68 @@ const BottomBar = styled.div`
 `;
 
 const Footer = () => {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
-  return (
-    <FooterContainer>
-      <FooterContent>
-        <Column>
-          <h4>{t('footer.guide')}</h4>
-          <ul>
-            <li>{t('footer.intro')}</li>
-            <li>{t('footer.attractions')}</li>
-            <li>{t('footer.transport')}</li>
-            <li>{t('footer.news')}</li>
-            <li>{t('footer.entertainment')}</li>
-            <li>{t('footer.routes')}</li>
-            <li>{t('footer.mall')}</li>
-            <li>{t('footer.shopping')}</li>
-            <li>{t('footer.restaurants')}</li>
-            <li>{t('footer.nightlife')}</li>
-          </ul>
-        </Column>
+    return (
+        <FooterContainer>
+            <FooterContent>
+                <Column>
+                    <h4>{t('footer.guide')}</h4>
+                    <ul>
+                        <li>{t('footer.intro')}</li>
+                        <li>{t('footer.attractions')}</li>
+                        <li>{t('footer.transport')}</li>
+                        <li>{t('footer.news')}</li>
+                        <li>{t('footer.entertainment')}</li>
+                        <li>{t('footer.routes')}</li>
+                        <li>{t('footer.mall')}</li>
+                        <li>{t('footer.shopping')}</li>
+                        <li>{t('footer.restaurants')}</li>
+                        <li>{t('footer.nightlife')}</li>
+                    </ul>
+                </Column>
 
-        <Column>
-          <h4>{t('footer.about')}</h4>
-          <ul>
-            <li>{t('footer.terms')}</li>
-            <li>{t('footer.privacy')}</li>
-            <li>{t('footer.contacts')}</li>
-          </ul>
-        </Column>
+                <Column>
+                    <h4>{t('footer.about')}</h4>
+                    <ul>
+                        <li>{t('footer.terms')}</li>
+                        <li>{t('footer.privacy')}</li>
+                        <li>{t('footer.contacts')}</li>
+                    </ul>
+                </Column>
 
-        <Column>
-          <h4>{t('footer.excursions')}</h4>
-          <ul>
-            <li>{t('footer.blog')}</li>
-            <li>{t('footer.faq')}</li>
-          </ul>
-        </Column>
+                <Column>
+                    <h4>{t('footer.excursions')}</h4>
+                    <ul>
+                        <li>{t('footer.blog')}</li>
+                        <li>{t('footer.faq')}</li>
+                    </ul>
+                </Column>
 
-        <Column>
-          <h4>{t('footer.social')}</h4>
-          <SocialIcons>
-            <img src="/facebook.svg" alt="Facebook" />
-            <img src="/vk.svg" alt="VK" />
-            <img src="/youtube.svg" alt="YouTube" />
-            <img src="/instagram.svg" alt="Instagram" />
-          </SocialIcons>
+                <Column>
+                    <h4>{t('footer.social')}</h4>
+                    <SocialIcons>
+                        <img src={`${basePath}facebook.svg`} alt="Facebook" />
+                        <img src={`${basePath}vk.svg`} alt="VK" />
+                        <img src={`${basePath}youtube.svg`} alt="YouTube" />
+                        <img src={`${basePath}instagram.svg`} alt="Instagram" />
+                    </SocialIcons>
 
-          <PaymentIcons>
-            <img src="/tls.png" alt="TLS" />
-            <img src="/mastercard.png" alt="Mastercard" />
-            <img src="/visa.png" alt="Visa" />
-            <img src="/applepay.png" alt="Apple Pay" />
-          </PaymentIcons>
-        </Column>
-      </FooterContent>
+                    <PaymentIcons>
+                        <img src={`${basePath}tls.png`} alt="TLS" />
+                        <img src={`${basePath}mastercard.png`} alt="Mastercard" />
+                        <img src={`${basePath}visa.png`} alt="Visa" />
+                        <img src={`${basePath}applepay.png`} alt="Apple Pay" />
+                    </PaymentIcons>
+                </Column>
+            </FooterContent>
+            <FooterImage src={`${basePath}fotofooter.jpeg`} alt="Dubai Footer Skyline" />
 
-      <FooterImage src="/fotofooter.JPEG" alt="Dubai Footer Skyline" />
-
-      <BottomBar>
-        © 2015 - 2025 Tripgrip®. {t('footer.madeInDubai')}
-      </BottomBar>
-    </FooterContainer>
-  );
+            <BottomBar>
+                © 2015 - 2025 Tripgrip®. {t('footer.madeInDubai')}
+            </BottomBar>
+        </FooterContainer>
+    );
 };
 
 export default Footer;
