@@ -1,4 +1,4 @@
+export const basePath = import.meta.env.DEV ? "/" : "/tripgrip/";
 
-export const basePath = import.meta.env.BASE_URL;
 
 
