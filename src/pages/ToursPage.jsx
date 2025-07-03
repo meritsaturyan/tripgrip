@@ -6,6 +6,8 @@ import { FaClock, FaTicketAlt, FaUsers, FaCreditCard, FaStar, FaPercent } from "
 import Filters from "./Filters";
 import DescriptionBlock from "../components/DescriptionBlock";
 import { useCurrency } from "../CurrencyContext";
+import { basePath } from "../utils/basePath";
+
 
 
 const PageWrapper = styled.div`
@@ -177,7 +179,7 @@ const ToursPage = () => {
             <TourCard key={tour.id}>
               <ImageWrapper>
                 <TourImage
-                  src={tour.image.startsWith("http") ? tour.image : `/${tour.image}`}
+                  src={tour.image.startsWith("http") ? tour.image : `${basePath}${tour.image}`}
                   alt={tour.title[lang]}
                 />
                 {tour.labels?.map((label, index) => (
@@ -196,9 +198,9 @@ const ToursPage = () => {
                     {tour.icons.map((icon, idx) => renderIcon(icon, idx))}
                   </Info>
                 )}
-               <Price>
-  {t("from")} {tour.price} {currency}
-</Price>
+                <Price>
+                  {t("from")} {tour.price} {currency}
+                </Price>
 
               </TourContent>
             </TourCard>
