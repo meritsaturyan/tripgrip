@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { basePath } from '../utils/basePath';
+
 
 const Wrapper = styled.div`
   max-width: 1000px;
@@ -66,7 +68,7 @@ const DescriptionBlock = () => {
       <p>{t("description.intro2")}</p>
 
       <img
-  src="/tripgrip/anapat.jpg"
+  src={`${basePath}anapat.jpg`}
   alt="Anapat"
   style={{
     width: '400px',
@@ -81,6 +83,7 @@ const DescriptionBlock = () => {
 />
 
 
+
       <p>{t("description.dubai_text1")}</p>
       <p>{t("description.dubai_text2")}</p>
 
@@ -91,7 +94,8 @@ const DescriptionBlock = () => {
       <p>{t("description.safari")}</p>
       <p>{t("description.kids_parks")}</p>
 
-      <img src="/tripgrip/dubai.jpg" alt="Dubai" className="image" />
+      <img src={`${basePath}dubai.jpg`} alt="Dubai" className="image" />
+
 
 
       <p>{t("description.waterparks")}</p>
