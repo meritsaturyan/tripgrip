@@ -287,38 +287,28 @@ Please change the parent <Route path="${j}"> to <Route path="${j==="/"?"*":`${j}
   color: #444;
 `,vx=({tourRef:l})=>{const{i18n:i,t:r}=ya(),{currency:s}=fm(),o=i.language,f=(h,y)=>h==="ticket"?O.jsx(Wb,{color:"#27ae60"},y):h==="family"?O.jsx(Ib,{color:"#27ae60"},y):null;return O.jsxs(O.Fragment,{children:[O.jsxs(Pp,{children:[O.jsx(px,{children:r("toursPage.title")}),O.jsx(gx,{children:r("toursPage.subtitle")})]}),O.jsx(mx,{children:O.jsxs(yx,{children:[O.jsxs(Jc,{children:[O.jsx(Fc,{children:O.jsx(Zb,{})}),O.jsx(Wc,{children:r("toursPage.safe_payment")})]}),O.jsxs(Jc,{children:[O.jsx(Fc,{children:O.jsx(Fb,{})}),O.jsx(Wc,{children:r("toursPage.official_partners")})]}),O.jsxs(Jc,{children:[O.jsx(Fc,{children:O.jsx(Kb,{})}),O.jsx(Wc,{children:r("toursPage.special_offers")})]})]})}),O.jsxs(Pp,{ref:l,children:[O.jsx(ax,{}),O.jsx(ux,{children:bv.map(h=>O.jsxs(rx,{children:[O.jsxs(sx,{children:[O.jsx(cx,{src:h.image.startsWith("http")?h.image:`${st}${h.image}`,alt:h.title[o]}),h.labels?.map((y,g)=>O.jsx(ox,{style:y==="15%"?{backgroundColor:"#ef2325"}:{},children:r(y)},g))]}),O.jsxs(fx,{children:[O.jsx(dx,{children:h.title[o]}),h.duration&&O.jsxs(Ip,{children:[O.jsx($b,{})," ",h.duration[o]]}),h.icons&&O.jsx(Ip,{children:h.icons.map((y,g)=>f(y,g))}),O.jsxs(hx,{children:[r("from")," ",h.price," ",s]})]})]},h.id))})]}),O.jsx(ix,{})]})},bx=()=>{const{id:l}=T1(),{t:i}=ya();return O.jsx("div",{style:{padding:24},children:i("tour_page",{id:l})})},xx=()=>{const{t:l}=ya();return O.jsx("div",{style:{padding:24},children:l("not_found")})},Sx=()=>{const{i18n:l,t:i}=ya(),[r,s]=M.useState(!1),o=[{code:"en",label:"🇬🇧"},{code:"ru",label:"🇷🇺"},{code:"hy",label:"🇦🇲"}],f=l.language,h=o.find(g=>g.code===f),y=g=>{l.changeLanguage(g),s(!1)};return O.jsxs("div",{style:{display:"flex",alignItems:"center",gap:"16px"},children:[O.jsx("span",{style:{cursor:"pointer",color:"#1a8917"},children:i("login")}),O.jsxs("div",{style:{position:"relative"},children:[O.jsxs("button",{onClick:()=>s(g=>!g),style:{padding:"6px 12px",borderRadius:"6px",border:"2px solid #007bff",background:"#fff",cursor:"pointer",fontSize:"18px"},children:[h?.label||"🌐"," ",O.jsx("span",{style:{marginLeft:6},children:"▾"})]}),r&&O.jsx("div",{style:{position:"absolute",top:"100%",left:0,marginTop:"4px",border:"1px solid #ccc",borderRadius:"6px",backgroundColor:"#fff",zIndex:10,boxShadow:"0 2px 6px rgba(0, 0, 0, 0.15)"},children:o.map(g=>O.jsx("div",{onClick:()=>y(g.code),style:{padding:"8px 12px",fontSize:"18px",cursor:"pointer",backgroundColor:g.code===f?"#f0f0f0":"#fff"},children:g.label},g.code))})]})]})},Ex=te.div`
   display: flex;
-  gap: 80px;
-  padding: 48px 64px;
+  gap: 40px;
+  padding: 32px 48px;
   background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
-  font-size: 20px;
-  min-width: 700px;
-  max-width: 720px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  min-width: 620px;
 `,eg=te.div`
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 18px;
 `,tg=te.div`
   display: flex;
   align-items: center;
-  gap: 20px;
-  font-size: 20px;
-  cursor: pointer;
+  gap: 12px;
+  font-size: 15px;
+  white-space: nowrap;
 
   img {
-    width: 38px;
-    height: 38px;
+    width: 26px;
+    height: 26px;
     object-fit: contain;
-  }
-
-  span {
-    color: #222;
-    font-weight: 500;
-  }
-
-  &:hover span {
-    color: #1a8917;
   }
 `,Ox=()=>{const{t:l}=ya(),i=[{icon:"map.jpg",label:l("footer.intro")},{icon:"avtobus.jpg",label:l("footer.transport")},{icon:"kaliso.jpg",label:l("footer.entertainment")},{icon:"mall.jpg",label:l("footer.mall")},{icon:"dzuk.jpg",label:l("footer.restaurants")},{icon:"elalamein.jpg",label:"Highlights"},{icon:"new.jpg",label:"New in the UAE"},{icon:"znak.jpg",label:l("footer.routes")},{icon:"shopping.jpg",label:l("footer.shopping")},{icon:"bar.jpg",label:l("footer.nightlife")}],r=i.slice(0,5),s=i.slice(5);return O.jsxs(Ex,{children:[O.jsx(eg,{children:r.map((o,f)=>O.jsxs(tg,{children:[O.jsx("img",{src:`${st}${o.icon}`,alt:o.label}),O.jsx("span",{children:o.label})]},f))}),O.jsx(eg,{children:s.map((o,f)=>O.jsxs(tg,{children:[O.jsx("img",{src:`${st}${o.icon}`,alt:o.label}),O.jsx("span",{children:o.label})]},f))})]})},Tx=te.header`
   display: flex;
@@ -451,7 +441,7 @@ Please change the parent <Route path="${j}"> to <Route path="${j==="/"?"*":`${j}
     font-size: 0.95rem;
     color: #333;
   }
-`;const jx=({onExcursionsClick:l})=>{const{t:i}=ya(),{currency:r,setCurrency:s}=fm(),[o,f]=M.useState(!1),h=p=>{const v=p.target.value;s(v),localStorage.setItem("currency",v)},[y,g]=M.useState(!1);return O.jsxs(O.Fragment,{children:[O.jsxs(Tx,{children:[O.jsx(Rx,{children:O.jsx(Ax,{src:`${st}tripgriplogo.jpeg`,alt:"Logo"})}),O.jsxs(_x,{children:[O.jsx(Xa,{onClick:l,children:i("excursions")}),O.jsxs("div",{style:{position:"relative"},children:[O.jsx(Xa,{onMouseEnter:()=>g(!0),onMouseLeave:()=>g(!1),children:i("guide")}),y&&O.jsx("div",{onMouseEnter:()=>g(!0),onMouseLeave:()=>g(!1),style:{position:"absolute",top:"100%",left:"0",zIndex:1e3,background:"#fff",border:"1px solid #eee",borderRadius:"8px",boxShadow:"0 2px 10px rgba(0,0,0,0.1)"},children:O.jsx(Ox,{})})]}),O.jsx(Xa,{children:i("contacts")}),O.jsx(Xa,{children:i("blog")})]}),O.jsxs(zx,{children:[O.jsx(Jb,{}),O.jsx(Pb,{}),O.jsx(Sx,{}),O.jsxs(Dx,{value:r,onChange:h,children:[O.jsx("option",{value:"AED",children:"AED"}),O.jsx("option",{value:"AMD",children:"AMD"}),O.jsx("option",{value:"USD",children:"USD"})]}),O.jsx(wx,{onClick:()=>f(p=>!p),children:O.jsx(kb,{})})]})]}),o&&O.jsxs(Cx,{children:[O.jsx(Xa,{onClick:()=>{l(),f(!1)},children:i("excursions")}),O.jsx(Xa,{children:i("guide")}),O.jsx(Xa,{children:i("contacts")}),O.jsx(Xa,{children:i("blog")})]})]})},Mx=te.footer`
+`;const jx=({onExcursionsClick:l})=>{const{t:i}=ya(),{currency:r,setCurrency:s}=fm(),[o,f]=M.useState(!1),h=p=>{const v=p.target.value;s(v),localStorage.setItem("currency",v)},[y,g]=M.useState(!1);return O.jsxs(O.Fragment,{children:[O.jsxs(Tx,{children:[O.jsx(Rx,{children:O.jsx(Ax,{src:`${st}tripgriplogo.jpeg`,alt:"Logo"})}),O.jsxs(_x,{children:[O.jsx(Xa,{onClick:l,children:i("excursions")}),O.jsxs("div",{style:{position:"relative"},onMouseEnter:()=>g(!0),onMouseLeave:()=>g(!1),children:[O.jsx(Xa,{children:i("guide")}),y&&O.jsx("div",{style:{position:"absolute",top:"100%",left:"0",zIndex:1e3,background:"#fff",border:"1px solid #eee",borderRadius:"8px",boxShadow:"0 2px 10px rgba(0,0,0,0.1)"},children:O.jsx(Ox,{})})]}),O.jsx(Xa,{children:i("contacts")}),O.jsx(Xa,{children:i("blog")})]}),O.jsxs(zx,{children:[O.jsx(Jb,{}),O.jsx(Pb,{}),O.jsx(Sx,{}),O.jsxs(Dx,{value:r,onChange:h,children:[O.jsx("option",{value:"AED",children:"AED"}),O.jsx("option",{value:"AMD",children:"AMD"}),O.jsx("option",{value:"USD",children:"USD"})]}),O.jsx(wx,{onClick:()=>f(p=>!p),children:O.jsx(kb,{})})]})]}),o&&O.jsxs(Cx,{children:[O.jsx(Xa,{onClick:()=>{l(),f(!1)},children:i("excursions")}),O.jsx(Xa,{children:i("guide")}),O.jsx(Xa,{children:i("contacts")}),O.jsx(Xa,{children:i("blog")})]})]})},Mx=te.footer`
   background-color: #fff;
   padding: 60px 20px 0;
   font-family: 'Roboto', sans-serif;
