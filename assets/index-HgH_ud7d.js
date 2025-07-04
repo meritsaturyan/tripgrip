@@ -288,31 +288,32 @@ Please change the parent <Route path="${j}"> to <Route path="${j==="/"?"*":`${j}
 `,vx=({tourRef:l})=>{const{i18n:i,t:r}=ya(),{currency:s}=fm(),o=i.language,f=(h,y)=>h==="ticket"?O.jsx(Wb,{color:"#27ae60"},y):h==="family"?O.jsx(Ib,{color:"#27ae60"},y):null;return O.jsxs(O.Fragment,{children:[O.jsxs(Pp,{children:[O.jsx(px,{children:r("toursPage.title")}),O.jsx(gx,{children:r("toursPage.subtitle")})]}),O.jsx(mx,{children:O.jsxs(yx,{children:[O.jsxs(Jc,{children:[O.jsx(Fc,{children:O.jsx(Zb,{})}),O.jsx(Wc,{children:r("toursPage.safe_payment")})]}),O.jsxs(Jc,{children:[O.jsx(Fc,{children:O.jsx(Fb,{})}),O.jsx(Wc,{children:r("toursPage.official_partners")})]}),O.jsxs(Jc,{children:[O.jsx(Fc,{children:O.jsx(Kb,{})}),O.jsx(Wc,{children:r("toursPage.special_offers")})]})]})}),O.jsxs(Pp,{ref:l,children:[O.jsx(ax,{}),O.jsx(ux,{children:bv.map(h=>O.jsxs(rx,{children:[O.jsxs(sx,{children:[O.jsx(cx,{src:h.image.startsWith("http")?h.image:`${st}${h.image}`,alt:h.title[o]}),h.labels?.map((y,g)=>O.jsx(ox,{style:y==="15%"?{backgroundColor:"#ef2325"}:{},children:r(y)},g))]}),O.jsxs(fx,{children:[O.jsx(dx,{children:h.title[o]}),h.duration&&O.jsxs(Ip,{children:[O.jsx($b,{})," ",h.duration[o]]}),h.icons&&O.jsx(Ip,{children:h.icons.map((y,g)=>f(y,g))}),O.jsxs(hx,{children:[r("from")," ",h.price," ",s]})]})]},h.id))})]}),O.jsx(ix,{})]})},bx=()=>{const{id:l}=T1(),{t:i}=ya();return O.jsx("div",{style:{padding:24},children:i("tour_page",{id:l})})},xx=()=>{const{t:l}=ya();return O.jsx("div",{style:{padding:24},children:l("not_found")})},Sx=()=>{const{i18n:l,t:i}=ya(),[r,s]=M.useState(!1),o=[{code:"en",label:"🇬🇧"},{code:"ru",label:"🇷🇺"},{code:"hy",label:"🇦🇲"}],f=l.language,h=o.find(g=>g.code===f),y=g=>{l.changeLanguage(g),s(!1)};return O.jsxs("div",{style:{display:"flex",alignItems:"center",gap:"16px"},children:[O.jsx("span",{style:{cursor:"pointer",color:"#1a8917"},children:i("login")}),O.jsxs("div",{style:{position:"relative"},children:[O.jsxs("button",{onClick:()=>s(g=>!g),style:{padding:"6px 12px",borderRadius:"6px",border:"2px solid #007bff",background:"#fff",cursor:"pointer",fontSize:"18px"},children:[h?.label||"🌐"," ",O.jsx("span",{style:{marginLeft:6},children:"▾"})]}),r&&O.jsx("div",{style:{position:"absolute",top:"100%",left:0,marginTop:"4px",border:"1px solid #ccc",borderRadius:"6px",backgroundColor:"#fff",zIndex:10,boxShadow:"0 2px 6px rgba(0, 0, 0, 0.15)"},children:o.map(g=>O.jsx("div",{onClick:()=>y(g.code),style:{padding:"8px 12px",fontSize:"18px",cursor:"pointer",backgroundColor:g.code===f?"#f0f0f0":"#fff"},children:g.label},g.code))})]})]})},Ex=te.div`
   display: flex;
   gap: 60px;
-  padding: 30px 40px;
+  padding: 36px 48px;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  font-size: 16px;
-  min-width: 520px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  font-size: 18px;
+  min-width: 560px;
 `,eg=te.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 22px;
 `,tg=te.div`
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 16px;
+  gap: 16px;
+  font-size: 18px;
   cursor: pointer;
 
   img {
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
   }
 
   span {
     color: #333;
+    font-weight: 500;
   }
 
   &:hover span {
