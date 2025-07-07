@@ -392,7 +392,7 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   align-items: center;
   z-index: 2000;
 `,Hx=W.div`
-  background: white;
+background-color: transparent;
   border-radius: 8px;
   padding: 40px 30px;
   width: 320px;
