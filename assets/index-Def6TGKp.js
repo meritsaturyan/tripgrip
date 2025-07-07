@@ -447,7 +447,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
     height: 84px;
     color: gray;
   }
-`,Gx=({onClose:l})=>x.jsxs(Hx,{children:[x.jsx(Yx,{onClick:l,children:x.jsx(Ux,{})}),x.jsxs(Bx,{children:[x.jsx("h2",{style:{textAlign:"center",color:"#009344",marginBottom:"20px"},children:"Sign in"}),x.jsx(ag,{type:"email",placeholder:"E-mail",style:{borderRadius:"8px"}}),x.jsx(ag,{type:"password",placeholder:"Password",style:{borderRadius:"8px"}}),x.jsx(qx,{children:"Sign In"}),x.jsxs("div",{style:{textAlign:"center",marginTop:"10px",fontSize:"14px"},children:["Not registered? ",x.jsx("span",{style:{color:"#009344",cursor:"pointer"},children:"Sign up"}),x.jsx("br",{}),x.jsx("span",{style:{color:"#009344",cursor:"pointer"},children:"Reset password"})]})]})]}),Vx=W.header`
+`,Gx=({onClose:l})=>x.jsxs(Hx,{children:[x.jsx(Yx,{onClick:l,children:x.jsx(Ux,{})}),x.jsxs(Bx,{children:[x.jsx(ag,{type:"email",placeholder:"E-mail",style:{borderRadius:"8px"}}),x.jsx(ag,{type:"password",placeholder:"Password",style:{borderRadius:"8px"}}),x.jsx(qx,{children:"Sign In"}),x.jsxs("div",{style:{textAlign:"center",marginTop:"10px",fontSize:"14px"},children:["Not registered? ",x.jsx("span",{style:{color:"#009344",cursor:"pointer"},children:"Sign up"}),x.jsx("br",{}),x.jsx("span",{style:{color:"#009344",cursor:"pointer"},children:"Reset password"})]})]})]}),Vx=W.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
