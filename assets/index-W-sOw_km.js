@@ -332,7 +332,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   width: 100vw;
   height: 100vh;
   backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.2); /* лёгкое затемнение */
+  background-color: rgba(0, 0, 0, 0); /* лёгкое затемнение */
   display: flex;
   justify-content: center;
   align-items: center;
