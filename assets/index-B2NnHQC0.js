@@ -411,7 +411,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
     color: #666;
   }
 `;const ag=W.input`
-  width: 100%;
+  width: 300px; 
   height: 50px;
   padding: 10px;
   font-size: 16px;
