@@ -370,13 +370,17 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   position: absolute;
   top: 20px;
   right: 20px;
+  width: 50px;
+  height: 45px;
   background: transparent;
   border: none;
-  color: #333;
-  font-size: 24px;
+  color: gray;
   cursor: pointer;
   z-index: 1001;
-`,Nx=({onClose:l})=>S.jsx(Cx,{onClick:l,children:S.jsxs(zx,{onClick:i=>i.stopPropagation(),children:[S.jsx(jx,{onClick:l,children:S.jsx(ex,{size:20})}),S.jsx(Dx,{type:"text",placeholder:"Search..."}),S.jsx(wx,{children:"Search"})]})}),Mx=ee.header`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`,Nx=({onClose:l})=>S.jsx(Cx,{onClick:l,children:S.jsxs(zx,{onClick:i=>i.stopPropagation(),children:[S.jsx(jx,{onClick:l,children:S.jsx(ex,{size:28})}),S.jsx(Dx,{type:"text",placeholder:"Search..."}),S.jsx(wx,{children:"Search"})]})}),Mx=ee.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
