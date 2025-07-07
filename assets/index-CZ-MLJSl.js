@@ -351,7 +351,7 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   border: 1px solid #ccc;
 `,Dx=ee.button`
   width: 300px;
-  height: 50.5px;
+  height: 52px;
   background-color: #009344;
   color: white;
   border: none;
