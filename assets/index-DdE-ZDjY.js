@@ -434,10 +434,10 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   cursor: pointer;
 
   svg {
-    width: 72px;
-    height: 72px;
+    width: 36px;      /* Сделай как у Search */
+    height: 36px;
     color: gray;
-    font-weight: 100;
+    font-weight: 100; /* Попробуем сделать "тонким" визуально */
   }
 `,Gx=({onClose:l})=>x.jsxs(Lx,{children:[x.jsx(Yx,{onClick:l,children:x.jsx(cm,{})}),x.jsxs(Hx,{children:[x.jsx(Bx,{onClick:l}),x.jsx("h2",{style:{textAlign:"center",color:"#009344",marginBottom:"20px"},children:"Sign in"}),x.jsx(ag,{type:"email",placeholder:"E-mail"}),x.jsx(ag,{type:"password",placeholder:"Password"}),x.jsx(qx,{children:"Sign In"}),x.jsxs("div",{style:{textAlign:"center",marginTop:"10px",fontSize:"14px"},children:["Not registered? ",x.jsx("span",{style:{color:"#009344",cursor:"pointer"},children:"Sign up"}),x.jsx("br",{}),x.jsx("span",{style:{color:"#009344",cursor:"pointer"},children:"Reset password"})]})]})]}),Vx=W.header`
   display: flex;
