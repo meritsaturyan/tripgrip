@@ -370,8 +370,8 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 50px;
-  height: 45px;
+  width: 150px;
+  height: 135px;
   background: transparent;
   border: none;
   color: gray;
@@ -380,7 +380,7 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   display: flex;
   align-items: center;
   justify-content: center;
-`,Nx=({onClose:l})=>S.jsx(Cx,{onClick:l,children:S.jsxs(zx,{onClick:i=>i.stopPropagation(),children:[S.jsx(jx,{onClick:l,children:S.jsx(ex,{size:28})}),S.jsx(Dx,{type:"text",placeholder:"Search..."}),S.jsx(wx,{children:"Search"})]})}),Mx=ee.header`
+`,Nx=({onClose:l})=>S.jsx(Cx,{onClick:l,children:S.jsxs(zx,{onClick:i=>i.stopPropagation(),children:[S.jsx(jx,{onClick:l,children:S.jsx(ex,{size:84})}),S.jsx(Dx,{type:"text",placeholder:"Search..."}),S.jsx(wx,{children:"Search"})]})}),Mx=ee.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
