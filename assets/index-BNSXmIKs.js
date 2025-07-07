@@ -349,9 +349,11 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  box-sizing: border-box; 
+  margin-bottom: 12px;
 `,Dx=ee.button`
   width: 300px;
-  height: 52px;
+  height: 50.5px;
   background-color: #009344;
   color: white;
   border: none;
@@ -359,6 +361,7 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-sizing: border-box; 
 
   &:hover {
     background-color: #007a38;
