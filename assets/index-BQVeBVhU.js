@@ -582,15 +582,16 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: #000;
 
-  svg {
-    transition: color 0.2s;
-  }
-
-  &:hover svg {
+  &:hover {
     color: #009344;
   }
-`,Wx=({onExcursionsClick:l,onContactClick:i})=>{const{t:r}=va(),{currency:s,setCurrency:c}=d0(),[f,h]=D.useState(!1),[y,g]=D.useState(!1),[p,v]=D.useState(!1),E=H=>{const G=H.target.value;c(G),localStorage.setItem("currency",G)},T=()=>{i?.()},[j,A]=D.useState(!1);return x.jsxs(x.Fragment,{children:[x.jsxs(Vx,{children:[x.jsx(kx,{children:x.jsx(Xx,{src:`${ht}tripgriplogo.jpeg`,alt:"Logo"})}),x.jsxs(Qx,{children:[x.jsx(ka,{onClick:l,children:r("excursions")}),x.jsxs("div",{onMouseEnter:()=>A(!0),onMouseLeave:()=>A(!1),style:{position:"relative",display:"inline-block"},children:[x.jsxs(ka,{style:{display:"flex",alignItems:"center",gap:"6px"},children:[x.jsx("span",{children:r("guide")}),j?x.jsx(Zb,{size:12,color:"#009344"}):x.jsx(Kb,{size:12,color:"#009344"})]}),j&&x.jsx("div",{style:{position:"absolute",top:"100%",left:"0",zIndex:1e3},children:x.jsx(Cx,{})})]}),x.jsx(ka,{to:"#",onClick:H=>{H.preventDefault(),T()},children:r("contacts")}),x.jsx(ka,{children:r("blog")})]}),x.jsxs(Zx,{children:[x.jsx(Pb,{onClick:()=>g(!0),style:{cursor:"pointer"}}),x.jsx(Fx,{onClick:()=>v(!0),children:x.jsx(ax,{className:"hover-green"})}),x.jsx(Rx,{}),x.jsxs(Kx,{value:s,onChange:E,children:[x.jsx("option",{value:"AED",children:"AED"}),x.jsx("option",{value:"AMD",children:"AMD"}),x.jsx("option",{value:"USD",children:"USD"})]}),x.jsx(Jx,{onClick:()=>h(H=>!H),children:x.jsx($b,{})})]})]}),f&&x.jsxs($x,{children:[x.jsx(ka,{onClick:()=>{l(),h(!1)},children:r("excursions")}),x.jsx(ka,{children:r("guide")}),x.jsx(ka,{children:r("contacts")}),x.jsx(ka,{children:r("blog")})]}),y&&x.jsx(Lx,{onClose:()=>g(!1)}),p&&x.jsx(Gx,{onClose:()=>v(!1)})]})},Px=W.footer`
+
+  svg {
+    margin-right: 6px;
+  }
+`,Wx=({onExcursionsClick:l,onContactClick:i})=>{const{t:r}=va(),{currency:s,setCurrency:c}=d0(),[f,h]=D.useState(!1),[y,g]=D.useState(!1),[p,v]=D.useState(!1),E=H=>{const G=H.target.value;c(G),localStorage.setItem("currency",G)},T=()=>{i?.()},[j,A]=D.useState(!1);return x.jsxs(x.Fragment,{children:[x.jsxs(Vx,{children:[x.jsx(kx,{children:x.jsx(Xx,{src:`${ht}tripgriplogo.jpeg`,alt:"Logo"})}),x.jsxs(Qx,{children:[x.jsx(ka,{onClick:l,children:r("excursions")}),x.jsxs("div",{onMouseEnter:()=>A(!0),onMouseLeave:()=>A(!1),style:{position:"relative",display:"inline-block"},children:[x.jsxs(ka,{style:{display:"flex",alignItems:"center",gap:"6px"},children:[x.jsx("span",{children:r("guide")}),j?x.jsx(Zb,{size:12,color:"#009344"}):x.jsx(Kb,{size:12,color:"#009344"})]}),j&&x.jsx("div",{style:{position:"absolute",top:"100%",left:"0",zIndex:1e3},children:x.jsx(Cx,{})})]}),x.jsx(ka,{to:"#",onClick:H=>{H.preventDefault(),T()},children:r("contacts")}),x.jsx(ka,{children:r("blog")})]}),x.jsxs(Zx,{children:[x.jsx(Pb,{onClick:()=>g(!0),style:{cursor:"pointer"}}),x.jsxs(Fx,{onClick:()=>v(!0),children:[x.jsx(ax,{}),x.jsx("span",{children:"Sign in"})]}),x.jsx(Rx,{}),x.jsxs(Kx,{value:s,onChange:E,children:[x.jsx("option",{value:"AED",children:"AED"}),x.jsx("option",{value:"AMD",children:"AMD"}),x.jsx("option",{value:"USD",children:"USD"})]}),x.jsx(Jx,{onClick:()=>h(H=>!H),children:x.jsx($b,{})})]})]}),f&&x.jsxs($x,{children:[x.jsx(ka,{onClick:()=>{l(),h(!1)},children:r("excursions")}),x.jsx(ka,{children:r("guide")}),x.jsx(ka,{children:r("contacts")}),x.jsx(ka,{children:r("blog")})]}),y&&x.jsx(Lx,{onClose:()=>g(!1)}),p&&x.jsx(Gx,{onClose:()=>v(!1)})]})},Px=W.footer`
   background-color: #fff;
   padding: 60px 20px 0;
   font-family: 'Roboto', sans-serif;
