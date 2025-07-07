@@ -413,9 +413,18 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
 `;const ag=W.input`
   width: 100%;
   height: 50px;
-  margin-bottom: 12px;
-  padding: 0 12px;
+  padding: 10px;
   font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 0 0 1px #ccc inset;
+  margin-bottom: 15px;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #009344 inset;
+  }
 `,qx=W.button`
   width: 100%;
   height: 50px;
