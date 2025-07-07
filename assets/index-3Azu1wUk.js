@@ -392,12 +392,13 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   align-items: center;
   z-index: 2000;
 `,Hx=W.div`
-background-color: transparent;
+  padding: 30px;
   border-radius: 8px;
-  padding: 40px 30px;
-  width: 320px;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
 `,Bx=W(tx)`
   position: absolute;
   top: 12px;
