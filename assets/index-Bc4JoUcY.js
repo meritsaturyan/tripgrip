@@ -343,16 +343,18 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   align-items: center;
   gap: 12px;
 `,zx=ee.input`
-  padding: 10px 16px;
   width: 300px;
+  height: 50.5px;
+  padding: 0 16px;
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
 `,Dx=ee.button`
+  width: 300px;
+  height: 50.5px;
   background-color: #009344;
   color: white;
   border: none;
-  padding: 10px 24px;
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
