@@ -380,7 +380,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
     height: 84px;
     color: gray;
   }
-`,Nx=({onClose:l})=>{const[i,r]=useState(""),s=_g(),c=()=>{i.trim()&&(s(`/search?s=${encodeURIComponent(i.trim())}`),l())},f=h=>{h.key==="Enter"&&c()};return x.jsxs(jx,{onClick:l,children:[x.jsx(Mx,{onClick:l,children:x.jsx(p0,{})}),x.jsxs(Dx,{onClick:h=>h.stopPropagation(),children:[x.jsx(Input,{type:"text",placeholder:"Search...",value:i,onChange:h=>r(h.target.value),onKeyDown:f}),x.jsx(SubmitButton,{onClick:c,children:"Search"})]})]})},Lx=W.div`
+`,Nx=({onClose:l})=>{const[i,r]=D.useState(""),s=_g(),c=()=>{i.trim()&&(s(`/search?s=${encodeURIComponent(i.trim())}`),l())},f=h=>{h.key==="Enter"&&c()};return x.jsxs(jx,{onClick:l,children:[x.jsx(Mx,{onClick:l,children:x.jsx(p0,{})}),x.jsxs(Dx,{onClick:h=>h.stopPropagation(),children:[x.jsx(Input,{type:"text",placeholder:"Search...",value:i,onChange:h=>r(h.target.value),onKeyDown:f}),x.jsx(SubmitButton,{onClick:c,children:"Search"})]})]})},Lx=W.div`
   position: fixed;
   top: 0;
   left: 0;
