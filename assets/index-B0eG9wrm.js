@@ -339,13 +339,11 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   z-index: 1000;
 `,Dx=W.div`
   position: relative;
-  background: white;
-  padding: 40px 20px;
-  border-radius: 12px;
-  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 12px;
+  width: 400px;
 `,jx=W.input`
   width: 300px;
   height: 50.5px;
@@ -374,11 +372,12 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 32px;
   background: transparent;
   border: none;
+  font-size: 32px;
+  color: #666;
   cursor: pointer;
-  color: #555;
+  z-index: 10;
 
   &:hover {
     color: #000;
