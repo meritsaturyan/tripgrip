@@ -506,7 +506,7 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0);
   z-index: 9999;
   display: flex;
   justify-content: center;
