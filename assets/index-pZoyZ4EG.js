@@ -550,21 +550,22 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
   font-size: 16px;
   cursor: pointer;
 `,l2=J.div`
-  position: absolute;
-  top: 16px;
-  right: 16px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 3000;
   cursor: pointer;
 
   svg {
-    width: 28px;
-    height: 28px;
+    width: 84px;
+    height: 84px;
     color: gray;
   }
 
   &:hover svg {
-    color: #333;
+    color: #666;
   }
-`,i2=({onClose:l})=>b.jsx(Ix,{children:b.jsxs(e2,{children:[b.jsx(l2,{onClick:l,children:b.jsx(Ac,{})}),b.jsx(t2,{children:"Site Registration"}),b.jsxs(a2,{children:[b.jsx(Zu,{placeholder:"First Name"}),b.jsx(Zu,{placeholder:"Last Name"}),b.jsx(Zu,{placeholder:"E-mail",type:"email"}),b.jsx(Zu,{placeholder:"Password",type:"password"}),b.jsx(n2,{children:"Sign Up"})]})]})}),u2=J.header`
+`,i2=({onClose:l})=>b.jsxs(Ix,{children:[b.jsx(l2,{onClick:l,children:b.jsx(Ac,{})}),b.jsxs(e2,{children:[b.jsx(t2,{children:"Site Registration"}),b.jsxs(a2,{children:[b.jsx(Zu,{placeholder:"First Name"}),b.jsx(Zu,{placeholder:"Last Name"}),b.jsx(Zu,{placeholder:"E-mail",type:"email"}),b.jsx(Zu,{placeholder:"Password",type:"password"}),b.jsx(n2,{children:"Sign Up"})]})]})]}),u2=J.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
