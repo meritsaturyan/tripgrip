@@ -515,13 +515,12 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
   background: transparent;
   border-radius: 8px;
   padding: 30px 40px;
-  width: auto;
   text-align: center;
   position: relative;
 `,t2=J.h2`
   color: #009344;
   margin-bottom: 20px;
-`,a2=J.div`
+`,a2=J.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -550,7 +549,6 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 12px;
 `,l2=J.div`
   position: absolute;
   top: 16px;
