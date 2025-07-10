@@ -526,9 +526,10 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
   width: 100%;
   margin-bottom: 12px;
   padding: 12px;
+  height: 50px;
+  font-size: 16px;
   border: none;
   border-radius: 6px;
-  font-size: 16px;
   background-color: white;
   box-shadow: 0 0 0 1px #ccc inset;
 
@@ -537,7 +538,8 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
     box-shadow: 0 0 0 2px #009344 inset;
   }
 `,a2=J.button`
-  width: 100%;
+  width: 100%; /* точно такая же ширина как у Input */
+  height: 50px;
   padding: 12px;
   background-color: #009344;
   color: white;
@@ -546,6 +548,7 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 12px;
 `,n2=J.div`
   position: absolute;
   top: 16px;
