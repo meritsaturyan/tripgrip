@@ -526,9 +526,10 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
   width: 100%;
   margin-bottom: 12px;
   padding: 12px;
+  height: 50px;
+  font-size: 16px;
   border: none;
   border-radius: 6px;
-  font-size: 16px;
   background-color: white;
   box-shadow: 0 0 0 1px #ccc inset;
 
@@ -538,6 +539,7 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
   }
 `,a2=J.button`
   width: 100%;
+  height: 50px; /* чтобы совпадало с Input */
   padding: 12px;
   background-color: #009344;
   color: white;
