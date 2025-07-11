@@ -24,13 +24,17 @@ const Title = styled.h1`
 `;
 
 const StyledSlider = styled(Slider)`
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* обязательно, чтобы слайд не схлопывался */
+  }
+
   .slick-slide img {
-    width: 100%;
-    height: auto;
-    max-width: 600px;
+    width: auto;
+    height: 280px; /* уменьшено */
     object-fit: cover;
-    margin: 0 auto;
-    display: block;
     border-radius: 10px;
   }
 
@@ -45,6 +49,7 @@ const StyledSlider = styled(Slider)`
   margin-bottom: 30px;
   text-align: center;
 `;
+
 
 
 const Info = styled.div`
