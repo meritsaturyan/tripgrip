@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import tours from "../tours.json";
@@ -24,17 +24,13 @@ const Title = styled.h1`
 `;
 
 const StyledSlider = styled(Slider)`
-  .slick-slide {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    min-height: 300px; /* обязательно, чтобы слайд не схлопывался */
-  }
-
   .slick-slide img {
-    width: auto;
-    height: 280px; /* уменьшено */
+    width: 100%;
+    height: auto;
+    max-width: 600px;
     object-fit: cover;
+    margin: 0 auto;
+    display: block;
     border-radius: 10px;
   }
 
@@ -49,8 +45,6 @@ const StyledSlider = styled(Slider)`
   margin-bottom: 30px;
   text-align: center;
 `;
-
-
 
 const Info = styled.div`
   margin-top: 20px;
@@ -111,6 +105,19 @@ const TourDetails = () => {
   const lang = i18n.language;
   const navigate = useNavigate();
   const { currency } = useCurrency();
+  const sliderRef = useRef();
+
+  useEffect(() => {
+    const handleResize = () => {
+      // форсируем ререндер слайдера
+      sliderRef.current?.slickGoTo(0);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (!tour) return <p style={{ textAlign: "center" }}>{t("Tour not found")}</p>;
 
@@ -124,6 +131,7 @@ const TourDetails = () => {
       <TourDetailsLayout>
         <LeftSection>
           <StyledSlider
+            ref={sliderRef}
             dots
             infinite
             speed={500}
@@ -194,6 +202,7 @@ const TourDetails = () => {
 };
 
 export default TourDetails;
+
 
 
 
