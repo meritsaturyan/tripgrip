@@ -797,10 +797,12 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   text-align: center;
 `,h4=ce(c4)`
   .slick-slide img {
-    margin: 0 auto;
-    width: 723px;
-    height: 362px;
+    width: 100%;
+    height: auto;
+    max-width: 723px;
     object-fit: cover;
+    margin: 0 auto;
+    display: block;
     border-radius: 10px;
   }
 
