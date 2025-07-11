@@ -27,7 +27,7 @@ const StyledSlider = styled(Slider)`
   .slick-slide img {
     width: 100%;
     height: auto;
-    max-width: 723px;
+    max-width: 600px;
     object-fit: cover;
     margin: 0 auto;
     display: block;
@@ -43,6 +43,7 @@ const StyledSlider = styled(Slider)`
   }
 
   margin-bottom: 30px;
+  text-align: center;
 `;
 
 

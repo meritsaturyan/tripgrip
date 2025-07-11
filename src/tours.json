@@ -26,7 +26,7 @@
       "en": "Tickets to Ferrari World™ Park, Yas Island, Abu Dhabi"
     },
     "image": "/ferrari.jpg",
-    "images": ["/ferrari.jpg", "/ferrari2.jpg", "/ferrari3.jpg"],
+    "images": ["/ferrari.jpg", "/ferarri2.jpg", "/ferarri3.jpg"],
     "price": "470",
     "currency": "AED",
     "duration": {
@@ -45,7 +45,7 @@
       "en": "Tickets to Wild Wadi Waterpark, Dubai"
     },
     "image": "/wilddubai.jpg",
-    "images": ["/wilddubai.jpg", "/wilddubai2.jpg", "/wilddubai3.jpg"],
+    "images": ["/wilddubai.jpg", "/wildwadi2.jpg", "/wildwadi3.jpg"],
     "price": "295",
     "currency": "AED",
     "duration": {
