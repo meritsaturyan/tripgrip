@@ -9,7 +9,7 @@
   "guide": "Guide",
   "contacts": "Contacts",
   "blog": "Blog",
-  "login": "Login",
+  
 
 
   "footer": {
@@ -35,13 +35,16 @@
     "faq": "FAQ",
 
     "social": "Social Media",
-    "madeInDubai": "Made in Dubai, UAE"
+    "madeInDubai": "Made in Dubai, UAE",
+    "contact": "Contact Us",
+    "phone": "Phone",
+    "email": "Email"
   },
   "toursPage": {
     "title": "Tripgrip – excursions in Dubai",
     "subtitle": "Best selection of tours, excursions, tickets and entertainment in the UAE. Easy payment",
     "safe_payment": "Secure payment via Visa, MasterCard and Apple Pay",
-    "official_partners": "On the UAE market since 2015. Official partners",
+    "official_partners": "On the UAE market since 2024. Official partners",
     "special_offers": "Great deals, promotions and discounts"
   },
   

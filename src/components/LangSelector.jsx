@@ -21,7 +21,7 @@ const LangSelector = () => {
 
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-      <span style={{ cursor: "pointer", color: "#1a8917" }}>{t("login")}</span>
+      {/* <span style={{ cursor: "pointer", color: "#1a8917" }}>{t("login")}</span> */}
 
       <div style={{ position: "relative" }}>
         <button

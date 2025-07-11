@@ -2,17 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { CurrencyProvider } from "./CurrencyContext";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/tripgrip">
+    <HashRouter>
       <CurrencyProvider>
         <App />
       </CurrencyProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
+
 
 
 

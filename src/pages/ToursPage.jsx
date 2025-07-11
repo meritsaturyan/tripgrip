@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useMemo } from 'react';
 import tours from "../tours.json";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
@@ -7,8 +7,7 @@ import Filters from "./Filters";
 import DescriptionBlock from "../components/DescriptionBlock";
 import { useCurrency } from "../CurrencyContext";
 import { basePath } from "../utils/basePath";
-
-
+import { Link } from "react-router-dom";
 
 const PageWrapper = styled.div`
   padding: 20px;
@@ -32,7 +31,15 @@ const TourCard = styled.div`
   background: #fff;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    z-index: 1;
+  }
 `;
+
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -135,12 +142,66 @@ const FeatureText = styled.div`
   color: #444;
 `;
 
-
-
 const ToursPage = () => {
   const { i18n, t } = useTranslation();
   const { currency } = useCurrency();
   const lang = i18n.language;
+
+  const [sortBy, setSortBy] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedEmirates, setSelectedEmirates] = useState([]);
+  const [groupTour, setGroupTour] = useState(false);
+  const [individualTour, setIndividualTour] = useState(false);
+
+  const filteredTours = useMemo(() => {
+    let result = [...tours];
+
+    if (selectedCategories.length > 0) {
+      result = result.filter(tour => selectedCategories.includes(tour.category));
+    }
+
+    if (selectedEmirates.length > 0) {
+      result = result.filter(tour =>
+        selectedEmirates.some(emirate =>
+          tour.title?.[lang]?.toLowerCase().includes(emirate.toLowerCase())
+        )
+      );
+    }
+
+    if (groupTour) {
+      result = result.filter(t => t.type === "group");
+    }
+
+    if (individualTour) {
+      result = result.filter(t => t.type === "individual");
+    }
+
+    const mappedSort = {
+      deals_first: "deals",
+      newest_first: "newest",
+      popular_first: "popular",
+      low_to_high: "priceLowHigh",
+      high_to_low: "priceHighLow"
+    }[sortBy] || "";
+
+    if (mappedSort === "deals") {
+      result = result
+        .filter(t => t.labels?.includes("15%") || t.labels?.includes("Special Offer"))
+        .concat(result.filter(t => !t.labels?.includes("15%") && !t.labels?.includes("Special Offer")));
+    } else if (mappedSort === "newest") {
+      result = result.filter(t => t.isNew).concat(result.filter(t => !t.isNew));
+    } else if (mappedSort === "popular") {
+      result = result
+        .filter(t => t.labels?.includes("Popular"))
+        .concat(result.filter(t => !t.labels?.includes("Popular")));
+    } else if (mappedSort === "priceLowHigh") {
+      result.sort((a, b) => Number(a.price) - Number(b.price));
+    } else if (mappedSort === "priceHighLow") {
+      result.sort((a, b) => Number(b.price) - Number(a.price));
+    }
+
+    return result;
+  }, [sortBy, selectedCategories, selectedEmirates, groupTour, individualTour, lang]);
 
   const renderIcon = (name, idx) => {
     if (name === "ticket") return <FaTicketAlt key={idx} color="#27ae60" />;
@@ -172,40 +233,57 @@ const ToursPage = () => {
         </FeatureSection>
       </FeatureWrapper>
 
-      <PageWrapper>
-        <Filters />
-        <Grid>
-          {tours.map((tour) => (
-            <TourCard key={tour.id}>
-              <ImageWrapper>
-                <TourImage
-                  src={tour.image.startsWith("http") ? tour.image : `${basePath}${tour.image}`}
-                  alt={tour.title[lang]}
-                />
-                {tour.labels?.map((label, index) => (
-                  <Label key={index}>{t(label)}</Label>
-                ))}
-              </ImageWrapper>
-              <TourContent>
-                <Title>{tour.title[lang]}</Title>
-                {tour.duration && (
-                  <Info>
-                    <FaClock /> {tour.duration[lang]}
-                  </Info>
-                )}
-                {tour.icons && (
-                  <Info>
-                    {tour.icons.map((icon, idx) => renderIcon(icon, idx))}
-                  </Info>
-                )}
-                <Price>
-                  {t("from")} {tour.price} {currency}
-                </Price>
+      <PageWrapper id="tours">
+        <Filters
+          sortOption={sortBy}
+          setSortOption={setSortBy}
+          selectedCategories={selectedCategories}
+          setSelectedCategories={setSelectedCategories}
+          selectedEmirates={selectedEmirates}
+          setSelectedEmirates={setSelectedEmirates}
+          groupTour={groupTour}
+          setGroupTour={setGroupTour}
+          individualTour={individualTour}
+          setIndividualTour={setIndividualTour}
+        />
 
-              </TourContent>
-            </TourCard>
+<Grid>
+  {filteredTours.map((tour) => (
+    <Link
+      key={tour.id}
+      to={`/tour/${tour.id}`}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      <TourCard>
+        <ImageWrapper>
+          <TourImage
+            src={tour.image.startsWith("http") ? tour.image : `${basePath}${tour.image}`}
+            alt={tour.title[lang]}
+          />
+          {tour.labels?.map((label, index) => (
+            <Label
+              key={index}
+              style={label === "15%" ? { backgroundColor: "#ef2325" } : {}}
+            >
+              {t(label)}
+            </Label>
           ))}
-        </Grid>
+        </ImageWrapper>
+        <TourContent>
+          <Title>{tour.title[lang]}</Title>
+          {tour.duration && (
+            <Info><FaClock /> {tour.duration[lang]}</Info>
+          )}
+          {tour.icons && (
+            <Info>{tour.icons.map((icon, idx) => renderIcon(icon, idx))}</Info>
+          )}
+          <Price>{t("from")} {tour.price} {currency}</Price>
+        </TourContent>
+      </TourCard>
+    </Link>
+  ))}
+</Grid>
+
       </PageWrapper>
 
       <DescriptionBlock />
@@ -214,6 +292,12 @@ const ToursPage = () => {
 };
 
 export default ToursPage;
+
+
+
+
+
+
 
 
 

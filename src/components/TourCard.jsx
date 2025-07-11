@@ -5,19 +5,19 @@ import { useTranslation } from "react-i18next";
 import { useCurrency } from "../CurrencyContext";
 import { basePath } from "../utils/basePath";
 
-
-
 const Card = styled.div`
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   width: 320px;
   max-width: 100%;
 
   &:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    z-index: 1;
   }
 
   @media (max-width: 480px) {
@@ -81,19 +81,10 @@ const TourCard = ({ tour }) => {
   const { currency } = useCurrency();
   const lang = i18n.language;
 
-
-
-
-
-
-
   return (
     <Link to={`/tour/${tour.id}`} style={{ textDecoration: "none", color: "inherit" }}>
       <Card>
-      <Image src={`${basePath}${tour.image}`} alt={tour.title[lang]} /> 
-
-
-
+        <Image src={`${basePath}${tour.image}`} alt={tour.title[lang]} />
         <Info>
           <Title>{tour.title[lang]}</Title>
           {tour.labels && tour.labels.length > 0 && (

@@ -115,32 +115,32 @@ const ClearButton = styled.button`
   }
 `;
 
-const Filters = () => {
+const Filters = ({
+  sortOption, setSortOption,
+  selectedCategories, setSelectedCategories,
+  selectedEmirates, setSelectedEmirates,
+  groupTour, setGroupTour,
+  individualTour, setIndividualTour
+}) => {
   const { t } = useTranslation();
+  const [dropdownOpen, setDropdownOpen] = useState(null);
 
-  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [sortOption, setSortOption] = useState('');
-  const [emirate, setEmirate] = useState('');
-  const [groupTour, setGroupTour] = useState(false);
-  const [individualTour, setIndividualTour] = useState(false);
-
-  const toggleDropdown = (type: string) => {
+  const toggleDropdown = (type) => {
     setDropdownOpen(prev => (prev === type ? null : type));
   };
 
-  const handleCheckboxChange = (category: string) => {
-    setSelectedCategories(prev =>
-      prev.includes(category)
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
+  const handleCheckboxChange = (list, setList, item) => {
+    setList(prev =>
+      prev.includes(item)
+        ? prev.filter(x => x !== item)
+        : [...prev, item]
     );
   };
 
   const clearFilters = () => {
     setSelectedCategories([]);
     setSortOption('');
-    setEmirate('');
+    setSelectedEmirates([]);
     setGroupTour(false);
     setIndividualTour(false);
   };
@@ -148,7 +148,7 @@ const Filters = () => {
   const hasFilters =
     selectedCategories.length > 0 ||
     sortOption !== '' ||
-    emirate !== '' ||
+    selectedEmirates.length > 0 ||
     groupTour ||
     individualTour;
 
@@ -163,112 +163,114 @@ const Filters = () => {
   const emirates = ['Abu Dhabi', 'Dubai', 'Sharjah', 'Ajman', 'Fujairah'];
 
   return (
-    <>
-      <FiltersWrapper>
-        <FilterGroup>
-          <Label>{t('filters.sorting')}</Label>
-          <DropdownWrapper>
-            <DropdownButton onClick={() => toggleDropdown('sort')}>
-              {t(`filters.${sortOption || 'sort_by'}`)}
-            </DropdownButton>
-            {dropdownOpen === 'sort' && (
-              <DropdownContent>
-                {sortOptions.map(option => (
-                  <CheckboxLabel key={option}>
-                    <Checkbox
-                      type="radio"
-                      name="sortOption"
-                      checked={sortOption === option}
-                      onChange={() => { setSortOption(option); setDropdownOpen(null); }}
-                    />
-                    {t(`filters.${option}`)}
-                  </CheckboxLabel>
-                ))}
-              </DropdownContent>
-            )}
-          </DropdownWrapper>
-        </FilterGroup>
+    <FiltersWrapper>
+      <FilterGroup>
+        <Label>{t('filters.sorting')}</Label>
+        <DropdownWrapper>
+          <DropdownButton onClick={() => toggleDropdown('sort')}>
+            {t(`filters.${sortOption || 'sort_by'}`)}
+          </DropdownButton>
+          {dropdownOpen === 'sort' && (
+            <DropdownContent>
+              {sortOptions.map(option => (
+                <CheckboxLabel key={option}>
+                  <Checkbox
+                    type="radio"
+                    name="sortOption"
+                    checked={sortOption === option}
+                    onChange={() => { setSortOption(option); setDropdownOpen(null); }}
+                  />
+                  {t(`filters.${option}`)}
+                </CheckboxLabel>
+              ))}
+            </DropdownContent>
+          )}
+        </DropdownWrapper>
+      </FilterGroup>
 
-        <FilterGroup>
-          <Label>{t('filters.tour_category')}</Label>
-          <DropdownWrapper>
-            <DropdownButton onClick={() => toggleDropdown('category')}>
-              {selectedCategories.length > 0
-                ? selectedCategories.map(c => t(`filters.category_${c}`)).join(', ')
-                : t('filters.select_category')}
-            </DropdownButton>
-            {dropdownOpen === 'category' && (
-              <DropdownContent>
-                {categories.map(({ key, label }) => (
-                  <CheckboxLabel key={key}>
-                    <Checkbox
-                      type="checkbox"
-                      checked={selectedCategories.includes(key)}
-                      onChange={() => handleCheckboxChange(key)}
-                    />
-                    {label}
-                  </CheckboxLabel>
-                ))}
-              </DropdownContent>
-            )}
-          </DropdownWrapper>
-        </FilterGroup>
+      <FilterGroup>
+        <Label>{t('filters.tour_category')}</Label>
+        <DropdownWrapper>
+          <DropdownButton onClick={() => toggleDropdown('category')}>
+            {selectedCategories.length > 0
+              ? selectedCategories.map(c => t(`filters.category_${c}`)).join(', ')
+              : t('filters.select_category')}
+          </DropdownButton>
+          {dropdownOpen === 'category' && (
+            <DropdownContent>
+              {categories.map(({ key, label }) => (
+                <CheckboxLabel key={key}>
+                  <Checkbox
+                    type="checkbox"
+                    checked={selectedCategories.includes(key)}
+                    onChange={() => handleCheckboxChange(selectedCategories, setSelectedCategories, key)}
+                  />
+                  {label}
+                </CheckboxLabel>
+              ))}
+            </DropdownContent>
+          )}
+        </DropdownWrapper>
+      </FilterGroup>
 
-        <FilterGroup>
-          <Label>{t('filters.by_emirate')}</Label>
-          <DropdownWrapper>
-            <DropdownButton onClick={() => toggleDropdown('emirate')}>
-              {emirate ? emirate : t('filters.select_emirate')}
-            </DropdownButton>
-            {dropdownOpen === 'emirate' && (
-              <DropdownContent>
-                {emirates.map(e => (
-                  <CheckboxLabel key={e}>
-                    <Checkbox
-                      type="radio"
-                      name="emirate"
-                      checked={emirate === e}
-                      onChange={() => { setEmirate(e); setDropdownOpen(null); }}
-                    />
-                    {e}
-                  </CheckboxLabel>
-                ))}
-              </DropdownContent>
-            )}
-          </DropdownWrapper>
-        </FilterGroup>
+      <FilterGroup>
+        <Label>{t('filters.by_emirate')}</Label>
+        <DropdownWrapper>
+          <DropdownButton onClick={() => toggleDropdown('emirate')}>
+            {selectedEmirates.length > 0
+              ? selectedEmirates.join(', ')
+              : t('filters.select_emirate')}
+          </DropdownButton>
+          {dropdownOpen === 'emirate' && (
+            <DropdownContent>
+              {emirates.map(e => (
+                <CheckboxLabel key={e}>
+                  <Checkbox
+                    type="checkbox"
+                    checked={selectedEmirates.includes(e)}
+                    onChange={() => handleCheckboxChange(selectedEmirates, setSelectedEmirates, e)}
+                  />
+                  {e}
+                </CheckboxLabel>
+              ))}
+            </DropdownContent>
+          )}
+        </DropdownWrapper>
+      </FilterGroup>
 
-        <FilterGroup style={{ marginTop: '-8px' }}>
-          <Label>{t('filters.tour_type')}</Label>
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <CheckboxLabel>
-              <Checkbox
-                type="checkbox"
-                checked={groupTour}
-                onChange={() => setGroupTour(prev => !prev)}
-              />
-              {t('filters.group')}
-            </CheckboxLabel>
-            <CheckboxLabel>
-              <Checkbox
-                type="checkbox"
-                checked={individualTour}
-                onChange={() => setIndividualTour(prev => !prev)}
-              />
-              {t('filters.individual')}
-            </CheckboxLabel>
-          </div>
-        </FilterGroup>
+      <FilterGroup style={{ marginTop: '-8px' }}>
+        <Label>{t('filters.tour_type')}</Label>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          <CheckboxLabel>
+            <Checkbox
+              type="checkbox"
+              checked={groupTour}
+              onChange={() => setGroupTour(prev => !prev)}
+            />
+            {t('filters.group')}
+          </CheckboxLabel>
+          <CheckboxLabel>
+            <Checkbox
+              type="checkbox"
+              checked={individualTour}
+              onChange={() => setIndividualTour(prev => !prev)}
+            />
+            {t('filters.individual')}
+          </CheckboxLabel>
+        </div>
+      </FilterGroup>
 
-        {hasFilters && (
-          <ClearButton onClick={clearFilters}>{t('filters.clear')}</ClearButton>
-        )}
-      </FiltersWrapper>
-    </>
+      {hasFilters && (
+        <ClearButton onClick={clearFilters}>{t('filters.clear')}</ClearButton>
+      )}
+    </FiltersWrapper>
   );
 };
 
 export default Filters;
+
+
+
 
 
 

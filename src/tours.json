@@ -7,6 +7,7 @@
       "en": "Tickets to Atlantis Waterpark"
     },
     "image": "/atlantis.jpg",
+    "images": ["/atlantis.jpg", "/atlantis2.jpg", "/atlantis3.jpg"],
     "price": "325",
     "currency": "AED",
     "duration": {
@@ -14,13 +15,8 @@
       "ru": "Полный день",
       "en": "Full Day"
     },
-    "labels": [
-      "popular"
-    ],
-    "icons": [
-      "ticket",
-      "family"
-    ]
+    "labels": ["popular"],
+    "icons": ["ticket", "family"]
   },
   {
     "id": 2,
@@ -30,6 +26,7 @@
       "en": "Tickets to Ferrari World™ Park, Yas Island, Abu Dhabi"
     },
     "image": "/ferrari.jpg",
+    "images": ["/ferrari.jpg", "/ferrari2.jpg", "/ferrari3.jpg"],
     "price": "470",
     "currency": "AED",
     "duration": {
@@ -37,13 +34,8 @@
       "ru": "Полный день",
       "en": "Full Day"
     },
-    "labels": [
-      "special_offer"
-    ],
-    "icons": [
-      "ticket",
-      "adventure"
-    ]
+    "labels": ["special_offer"],
+    "icons": ["ticket", "adventure"]
   },
   {
     "id": 3,
@@ -53,6 +45,7 @@
       "en": "Tickets to Wild Wadi Waterpark, Dubai"
     },
     "image": "/wilddubai.jpg",
+    "images": ["/wilddubai.jpg", "/wilddubai2.jpg", "/wilddubai3.jpg"],
     "price": "295",
     "currency": "AED",
     "duration": {
@@ -60,11 +53,8 @@
       "ru": "Полдня",
       "en": "Half Day"
     },
-    "labels": [],
-    "icons": [
-      "ticket",
-      "couples"
-    ]
+    "labels": ["15%"],
+    "icons": ["ticket", "couples"]
   },
   {
     "id": 4,
@@ -74,6 +64,7 @@
       "en": "Tickets to La Perle Show Dubai"
     },
     "image": "/laperle.jpg",
+    "images": ["/laperle.jpg", "/laperle2.jpg", "/laperle3.jpg"],
     "price": "400",
     "currency": "AED",
     "duration": {
@@ -81,13 +72,8 @@
       "ru": "Вечер",
       "en": "Evening"
     },
-    "labels": [
-      "popular"
-    ],
-    "icons": [
-      "ticket",
-      "entertainment"
-    ]
+    "labels": ["popular"],
+    "icons": ["ticket", "entertainment"]
   },
   {
     "id": 5,
@@ -97,6 +83,7 @@
       "en": "Tickets to Motiongate Park Dubai"
     },
     "image": "/motiongate.jpg",
+    "images": ["/motiongate.jpg", "/motiongate2.jpg", "/motiongate3.jpg"],
     "price": "350",
     "currency": "AED",
     "duration": {
@@ -104,13 +91,8 @@
       "ru": "Полный день",
       "en": "Full Day"
     },
-    "labels": [
-      "bestseller"
-    ],
-    "icons": [
-      "ticket",
-      "adventure"
-    ]
+    "labels": ["bestseller"],
+    "icons": ["ticket", "adventure"]
   },
   {
     "id": 6,
@@ -120,6 +102,7 @@
       "en": "Tickets to SeaWorld Park, Abu Dhabi"
     },
     "image": "/seaworld.jpg",
+    "images": ["/seaworld.jpg", "/seaworld2.jpg", "/seaworld3.jpg"],
     "price": "360",
     "currency": "AED",
     "duration": {
@@ -127,12 +110,7 @@
       "ru": "Полный день",
       "en": "Full Day"
     },
-    "labels": [
-      "popular"
-    ],
-    "icons": [
-      "ticket",
-      "family"
-    ]
+    "labels": ["popular"],
+    "icons": ["ticket", "family"]
   }
 ]
