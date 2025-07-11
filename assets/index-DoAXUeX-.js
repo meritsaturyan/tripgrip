@@ -799,7 +799,7 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   .slick-slide img {
     width: 100%;
     height: auto;
-    max-width: 723px;
+    max-width: 600px;
     object-fit: cover;
     margin: 0 auto;
     display: block;
@@ -815,6 +815,7 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   }
 
   margin-bottom: 30px;
+  text-align: center;
 `,p4=ce.div`
   margin-top: 20px;
   font-size: 1.1rem;
