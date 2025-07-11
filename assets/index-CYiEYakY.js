@@ -796,13 +796,17 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   color: #1e7b3c;
   text-align: center;
 `,h4=ce(c4)`
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* обязательно, чтобы слайд не схлопывался */
+  }
+
   .slick-slide img {
-    width: 100%;
-    height: auto;
-    max-width: 600px;
+    width: auto;
+    height: 280px; /* уменьшено */
     object-fit: cover;
-    margin: 0 auto;
-    display: block;
     border-radius: 10px;
   }
 
