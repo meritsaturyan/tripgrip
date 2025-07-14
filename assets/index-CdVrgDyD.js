@@ -831,28 +831,30 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
 
 
   .slick-prev,
-  .slick-next {
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    width: auto;
-    height: auto;
-  }
+.slick-next {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  width: auto;
+  height: auto;
+}
 
-  .slick-prev:before,
-  .slick-next:before {
-    font-size: 40px;
-    color: rgba(0, 0, 0, 0.5);
-  }
+.slick-prev:before,
+.slick-next:before {
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.4); /* полупрозрачный чёрный */
+  content: "←"; /* на всякий случай, если иконки не подтянутся */
+}
 
-  .slick-prev {
-    left: -45px;
-  }
+.slick-prev {
+  left: -40px;
+}
 
-  .slick-next {
-    right: -45px;
-  }
+.slick-next {
+  right: -40px;
+}
+
 
 `,pw=ce.div`
   margin-top: 20px;
