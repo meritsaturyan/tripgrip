@@ -829,25 +829,28 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
     color: #009344;
   }
 
-  /* Убираем фон и делаем стрелки больше */
+
   .slick-prev,
   .slick-next {
     background: none !important;
     border: none;
-    width: auto;
-    height: auto;
+    width: 40px;
+    height: 40px;
     z-index: 10;
   }
 
   .slick-prev:before,
   .slick-next:before {
-    content: '←';
-    font-size: 36px;       /* размер стрелки больше */
-    color: rgba(0, 0, 0, 0.5); /* полупрозрачный чёрный */
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.5); 
   }
 
-  .slick-next:before {
-    content: '→';
+  .slick-prev {
+    left: -45px;
+  }
+
+  .slick-next {
+    right: -45px;
   }
 `,pw=ce.div`
   margin-top: 20px;
