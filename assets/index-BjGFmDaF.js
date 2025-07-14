@@ -844,7 +844,7 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   .slick-prev:before,
   .slick-next:before {
     color: black; /* цвет стрелок */
-    font-size: 24px;
+    font-size: 48px;
   }
 `,pw=ce.div`
   margin-top: 20px;
