@@ -858,17 +858,27 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #333;
+    flex-wrap: wrap;
   }
 
   .info-icon {
     color: #009344;
     font-size: 18px;
-    flex-shrink: 0;
   }
 
   .info-text {
-    margin: 0;
+    color: #333;
+    font-weight: 400;
+  }
+
+  .map-link {
+    text-decoration: none;
+    color: #009344;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `,gw=ce.button`
   margin-bottom: 20px;
@@ -903,4 +913,4 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   flex: 2;
 `,bw=ce.div`
   flex: 1;
-`,Sw=()=>{const{id:i}=A1(),r=lf.find(y=>y.id===parseInt(i)),{t:u,i18n:o}=hn(),c=o.language,f=Ic(),{currency:p}=Pu(),v=J.useRef();return J.useEffect(()=>{const y=()=>{v.current?.slickGoTo(0)};return window.addEventListener("resize",y),y(),()=>window.removeEventListener("resize",y)},[]),r?w.jsxs(fw,{children:[w.jsxs(gw,{onClick:()=>f(-1),children:[w.jsx(WS,{})," ",u("Back")]}),w.jsx(dw,{children:r.title[c]}),w.jsxs(yw,{children:[w.jsxs(vw,{children:[w.jsx(hw,{ref:v,dots:!0,arrows:!0,infinite:!0,speed:500,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:3e3,children:(r.images||[r.image]).map((y,m)=>w.jsx("img",{src:`${St}${y}`,alt:`${r.title[c]} ${m+1}`},m))},r.id),w.jsxs(pw,{children:[w.jsxs("div",{className:"info-row",children:[w.jsx(df,{className:"info-icon"}),w.jsx("span",{className:"info-text",children:"Full Day"})]}),w.jsxs("div",{className:"info-row",children:[w.jsx(pf,{className:"info-icon"}),w.jsx("span",{className:"info-text",children:"Group or Individual"})]}),w.jsxs("div",{className:"info-row",children:[w.jsx(hf,{className:"info-icon"}),w.jsxs("span",{className:"info-text",children:["From ",r.price," ",p]})]})]})]}),w.jsx(bw,{children:w.jsxs(mw,{children:[w.jsx("h3",{style:{marginBottom:"15px"},children:u("Book this tour")}),w.jsxs("label",{children:[u("Select date"),":"]}),w.jsx("input",{type:"date",style:{width:"100%",marginBottom:"15px",padding:"8px",borderRadius:"6px",border:"1px solid #ccc"}}),w.jsx("button",{style:{width:"100%",padding:"10px",backgroundColor:"#009344",color:"white",border:"none",borderRadius:"6px",cursor:"pointer"},children:u("Book")})]})})]})]}):w.jsx("p",{style:{textAlign:"center"},children:u("Tour not found")})},xw=()=>{const i=J.useCallback(()=>{const u=document.getElementById("tours");u&&u.scrollIntoView({behavior:"smooth"})},[]),r=J.useCallback(()=>{const u=document.getElementById("footer");u&&u.scrollIntoView({behavior:"smooth"})},[]);return w.jsxs(yy,{children:[w.jsx(p2,{onExcursionsClick:i,onContactClick:r}),w.jsxs($1,{children:[w.jsx(Nr,{path:"/",element:w.jsx(_x,{})}),w.jsx(Nr,{path:"/tour/:id",element:w.jsx(Sw,{})})," ",w.jsx(Nr,{path:"/search",element:w.jsx(Nx,{})}),w.jsx(Nr,{path:"*",element:w.jsx(Hx,{})})]}),w.jsx(x2,{id:"footer"})]})};e1.createRoot(document.getElementById("root")).render(w.jsx(qt.StrictMode,{children:w.jsx(mb,{children:w.jsx(yy,{children:w.jsx(xw,{})})})}));
+`,Sw=()=>{const{id:i}=A1(),r=lf.find(y=>y.id===parseInt(i)),{t:u,i18n:o}=hn(),c=o.language,f=Ic(),{currency:p}=Pu(),v=J.useRef();return J.useEffect(()=>{const y=()=>{v.current?.slickGoTo(0)};return window.addEventListener("resize",y),y(),()=>window.removeEventListener("resize",y)},[]),r?w.jsxs(fw,{children:[w.jsxs(gw,{onClick:()=>f(-1),children:[w.jsx(WS,{})," ",u("Back")]}),w.jsx(dw,{children:r.title[c]}),w.jsxs(yw,{children:[w.jsxs(vw,{children:[w.jsx(hw,{ref:v,dots:!0,arrows:!0,infinite:!0,speed:500,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:3e3,children:(r.images||[r.image]).map((y,m)=>w.jsx("img",{src:`${St}${y}`,alt:`${r.title[c]} ${m+1}`},m))},r.id),w.jsxs(pw,{children:[w.jsxs("div",{className:"info-row",children:[w.jsx(df,{className:"info-icon"}),w.jsx("span",{className:"info-text",children:"Full Day"})]}),w.jsxs("div",{className:"info-row",children:[w.jsx(pf,{className:"info-icon"}),w.jsx("span",{className:"info-text",children:"Group or Individual"})]}),w.jsxs("div",{className:"info-row",children:[w.jsx(hf,{className:"info-icon"}),w.jsxs("span",{className:"info-text",children:["From ",r.price," ",p]})]}),w.jsxs("div",{className:"info-row",children:[w.jsx(FaMapMarkerAlt,{className:"info-icon"}),w.jsx("a",{className:"info-text map-link",href:"https://www.google.com/maps/place/Atlantis+The+Palm/@25.1303805,55.1171726,17z",target:"_blank",rel:"noopener noreferrer",children:"Atlantis the Palm"})]})]})]}),w.jsx(bw,{children:w.jsxs(mw,{children:[w.jsx("h3",{style:{marginBottom:"15px"},children:u("Book this tour")}),w.jsxs("label",{children:[u("Select date"),":"]}),w.jsx("input",{type:"date",style:{width:"100%",marginBottom:"15px",padding:"8px",borderRadius:"6px",border:"1px solid #ccc"}}),w.jsx("button",{style:{width:"100%",padding:"10px",backgroundColor:"#009344",color:"white",border:"none",borderRadius:"6px",cursor:"pointer"},children:u("Book")})]})})]})]}):w.jsx("p",{style:{textAlign:"center"},children:u("Tour not found")})},xw=()=>{const i=J.useCallback(()=>{const u=document.getElementById("tours");u&&u.scrollIntoView({behavior:"smooth"})},[]),r=J.useCallback(()=>{const u=document.getElementById("footer");u&&u.scrollIntoView({behavior:"smooth"})},[]);return w.jsxs(yy,{children:[w.jsx(p2,{onExcursionsClick:i,onContactClick:r}),w.jsxs($1,{children:[w.jsx(Nr,{path:"/",element:w.jsx(_x,{})}),w.jsx(Nr,{path:"/tour/:id",element:w.jsx(Sw,{})})," ",w.jsx(Nr,{path:"/search",element:w.jsx(Nx,{})}),w.jsx(Nr,{path:"*",element:w.jsx(Hx,{})})]}),w.jsx(x2,{id:"footer"})]})};e1.createRoot(document.getElementById("root")).render(w.jsx(qt.StrictMode,{children:w.jsx(mb,{children:w.jsx(yy,{children:w.jsx(xw,{})})})}));
