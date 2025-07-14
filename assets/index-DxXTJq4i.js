@@ -828,6 +828,19 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   .slick-dots li.slick-active button:before {
     color: #009344;
   }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px;
+    color: #009344;
+  }
 `,pw=ce.div`
   margin-top: 20px;
   font-size: 1.1rem;
@@ -868,4 +881,4 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   flex: 2;
 `,bw=ce.div`
   flex: 1;
-`,Sw=()=>{const{id:i}=M1(),r=lf.find(y=>y.id===parseInt(i)),{t:u,i18n:o}=hn(),s=o.language,f=Ic(),{currency:p}=Pu(),v=J.useRef();return J.useEffect(()=>{const y=()=>{v.current?.slickGoTo(0)};return window.addEventListener("resize",y),y(),()=>window.removeEventListener("resize",y)},[]),r?w.jsxs(fw,{children:[w.jsxs(gw,{onClick:()=>f(-1),children:[w.jsx(FS,{})," ",u("Back")]}),w.jsx(dw,{children:r.title[s]}),w.jsxs(yw,{children:[w.jsxs(vw,{children:[w.jsx(hw,{ref:v,dots:!0,infinite:!0,speed:500,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:3e3,children:(r.images||[r.image]).map((y,m)=>w.jsx("img",{src:`${St}${y}`,alt:`${r.title[s]} ${m+1}`},m))},r.id),w.jsxs(pw,{children:[r.duration?.[s]&&w.jsxs("p",{children:[w.jsx(df,{})," ",r.duration[s]]}),w.jsxs("p",{children:[w.jsx(pf,{})," ",u("Group or Individual")]}),w.jsxs("p",{children:[w.jsx(hf,{})," ",u("from")," ",r.price," ",p]}),w.jsxs("p",{children:[w.jsx(my,{})," ",u("Secure payment with Visa/Mastercard")]})]})]}),w.jsx(bw,{children:w.jsxs(mw,{children:[w.jsx("h3",{style:{marginBottom:"15px"},children:u("Book this tour")}),w.jsxs("label",{children:[u("Select date"),":"]}),w.jsx("input",{type:"date",style:{width:"100%",marginBottom:"15px",padding:"8px",borderRadius:"6px",border:"1px solid #ccc"}}),w.jsx("button",{style:{width:"100%",padding:"10px",backgroundColor:"#009344",color:"white",border:"none",borderRadius:"6px",cursor:"pointer"},children:u("Book")})]})})]})]}):w.jsx("p",{style:{textAlign:"center"},children:u("Tour not found")})},xw=()=>{const i=J.useCallback(()=>{const u=document.getElementById("tours");u&&u.scrollIntoView({behavior:"smooth"})},[]),r=J.useCallback(()=>{const u=document.getElementById("footer");u&&u.scrollIntoView({behavior:"smooth"})},[]);return w.jsxs(vy,{children:[w.jsx(p2,{onExcursionsClick:i,onContactClick:r}),w.jsxs(Q1,{children:[w.jsx(Nr,{path:"/",element:w.jsx(_x,{})}),w.jsx(Nr,{path:"/tour/:id",element:w.jsx(Sw,{})})," ",w.jsx(Nr,{path:"/search",element:w.jsx(Nx,{})}),w.jsx(Nr,{path:"*",element:w.jsx(Hx,{})})]}),w.jsx(x2,{id:"footer"})]})};t1.createRoot(document.getElementById("root")).render(w.jsx(qt.StrictMode,{children:w.jsx(yb,{children:w.jsx(vy,{children:w.jsx(xw,{})})})}));
+`,Sw=()=>{const{id:i}=M1(),r=lf.find(y=>y.id===parseInt(i)),{t:u,i18n:o}=hn(),s=o.language,f=Ic(),{currency:p}=Pu(),v=J.useRef();return J.useEffect(()=>{const y=()=>{v.current?.slickGoTo(0)};return window.addEventListener("resize",y),y(),()=>window.removeEventListener("resize",y)},[]),r?w.jsxs(fw,{children:[w.jsxs(gw,{onClick:()=>f(-1),children:[w.jsx(FS,{})," ",u("Back")]}),w.jsx(dw,{children:r.title[s]}),w.jsxs(yw,{children:[w.jsxs(vw,{children:[w.jsx(hw,{ref:v,dots:!0,arrows:!0,infinite:!0,speed:500,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:3e3,children:(r.images||[r.image]).map((y,m)=>w.jsx("img",{src:`${St}${y}`,alt:`${r.title[s]} ${m+1}`},m))},r.id),w.jsxs(pw,{children:[r.duration?.[s]&&w.jsxs("p",{children:[w.jsx(df,{})," ",r.duration[s]]}),w.jsxs("p",{children:[w.jsx(pf,{})," ",u("Group or Individual")]}),w.jsxs("p",{children:[w.jsx(hf,{})," ",u("from")," ",r.price," ",p]}),w.jsxs("p",{children:[w.jsx(my,{})," ",u("Secure payment with Visa/Mastercard")]})]})]}),w.jsx(bw,{children:w.jsxs(mw,{children:[w.jsx("h3",{style:{marginBottom:"15px"},children:u("Book this tour")}),w.jsxs("label",{children:[u("Select date"),":"]}),w.jsx("input",{type:"date",style:{width:"100%",marginBottom:"15px",padding:"8px",borderRadius:"6px",border:"1px solid #ccc"}}),w.jsx("button",{style:{width:"100%",padding:"10px",backgroundColor:"#009344",color:"white",border:"none",borderRadius:"6px",cursor:"pointer"},children:u("Book")})]})})]})]}):w.jsx("p",{style:{textAlign:"center"},children:u("Tour not found")})},xw=()=>{const i=J.useCallback(()=>{const u=document.getElementById("tours");u&&u.scrollIntoView({behavior:"smooth"})},[]),r=J.useCallback(()=>{const u=document.getElementById("footer");u&&u.scrollIntoView({behavior:"smooth"})},[]);return w.jsxs(vy,{children:[w.jsx(p2,{onExcursionsClick:i,onContactClick:r}),w.jsxs(Q1,{children:[w.jsx(Nr,{path:"/",element:w.jsx(_x,{})}),w.jsx(Nr,{path:"/tour/:id",element:w.jsx(Sw,{})})," ",w.jsx(Nr,{path:"/search",element:w.jsx(Nx,{})}),w.jsx(Nr,{path:"*",element:w.jsx(Hx,{})})]}),w.jsx(x2,{id:"footer"})]})};t1.createRoot(document.getElementById("root")).render(w.jsx(qt.StrictMode,{children:w.jsx(yb,{children:w.jsx(vy,{children:w.jsx(xw,{})})})}));
