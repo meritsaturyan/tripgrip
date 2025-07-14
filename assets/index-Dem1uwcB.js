@@ -829,17 +829,22 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
     color: #009344;
   }
 
+  /* Стрелки */
+  .slick-arrow {
+    opacity: 0.4; 
+    z-index: 10;
+  }
+
   .slick-prev,
   .slick-next {
-    z-index: 2;
-    width: 40px;
-    height: 40px;
+    background: none !important; 
+    border: none;
   }
 
   .slick-prev:before,
   .slick-next:before {
-    font-size: 30px;
-    color: #009344;
+    color: black; /* цвет стрелок */
+    font-size: 24px;
   }
 `,pw=ce.div`
   margin-top: 20px;
