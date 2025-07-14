@@ -833,16 +833,17 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   .slick-prev,
   .slick-next {
     background: none !important;
-    border: none;
-    width: 40px;
-    height: 40px;
-    z-index: 10;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    width: auto;
+    height: auto;
   }
 
   .slick-prev:before,
   .slick-next:before {
-    font-size: 36px;
-    color: rgba(0, 0, 0, 0.5); 
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.5);
   }
 
   .slick-prev {
@@ -852,6 +853,7 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   .slick-next {
     right: -45px;
   }
+
 `,pw=ce.div`
   margin-top: 20px;
   font-size: 1.1rem;
