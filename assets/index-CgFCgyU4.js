@@ -801,20 +801,25 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-weight: 600;
         }
 
-        /* Критично: растягиваем все уровни обёртки datepicker */
-        .booking-form .react-datepicker-wrapper,
-        .booking-form .react-datepicker__input-container,
-        .booking-form .date-input {
+        /* Растягиваем input ровно как кнопку, но без выхода за рамки */
+        .booking-form .react-datepicker-wrapper {
+          width: 100%;
+          display: block;
+        }
+        .booking-form .react-datepicker__input-container {
+          display: block;
           width: 100%;
         }
-
         .booking-form .date-input {
+          width: 100%;
+          max-width: 100%;
           padding: 12px 16px;
           border: 1px solid #ccc;
           border-radius: 6px;
           outline: none;
           font-size: 16px;
           background: #fff;
+          box-sizing: border-box;
           box-shadow: 0 2px 4px rgba(0,0,0,0.08);
         }
         .booking-form .date-input:focus {
