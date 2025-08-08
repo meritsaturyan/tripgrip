@@ -1002,23 +1002,29 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   border: 1px solid #ececec;
   border-radius: 12px;
   padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
 `,AM=ce.h2`
   margin: 4px 0 18px;
   font-size: 18px;
   color: #222;
 `,ip=ce.input`
   width: 100%;
+  max-width: 100%;
   padding: 14px 12px;
   border: 1px solid #dcdcdc;
   border-radius: 8px;
   font-size: 16px;
+  box-sizing: border-box;
 `,LM=ce.select`
   width: 100%;
+  max-width: 100%;
   padding: 14px 12px;
   border: 1px solid #dcdcdc;
   border-radius: 8px;
   font-size: 16px;
   background: #fff;
+  box-sizing: border-box;
 `,op=ce.label`
   display: block;
   font-size: 14px;
