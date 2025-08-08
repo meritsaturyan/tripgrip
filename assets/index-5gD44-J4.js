@@ -899,19 +899,31 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           }
         }
       `}),k.jsxs("div",{className:"booking-form",children:[k.jsx("h3",{className:"booking-form__title",children:"Booking form"}),k.jsx(sk,{selected:n,onChange:l=>t(l),className:"date-input",placeholderText:"Select date"}),k.jsx("hr",{className:"booking-form__hr"}),k.jsxs("div",{className:"booking-form__row",children:[k.jsx("span",{className:"booking-form__label",children:"Total:"}),k.jsxs("div",{className:"booking-form__amount",children:[k.jsxs("div",{className:"booking-form__amount-main",children:[i.price," ",a]}),k.jsx("div",{className:"booking-form__amount-sub",children:"USD 0"})]})]}),k.jsxs("div",{className:"booking-form__payments",children:[k.jsx(u_,{size:36,"aria-label":"Visa"}),k.jsx(s_,{size:36,"aria-label":"Mastercard"}),k.jsx(l_,{size:36,"aria-label":"Apple Pay"})]}),k.jsx("button",{className:"booking-form__btn",children:"Book"}),k.jsx("div",{className:"booking-form__note",children:"Go to entering contact information"})]})]})},fk=fe.div`
+  width: 100%;
+  box-sizing: border-box;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
 `,dk=fe.h1`
   margin-bottom: 20px;
   font-size: 2rem;
   color: #1e7b3c;
   text-align: center;
 `,pk=fe(_E)`
+  width: 100%;
   max-width: 723px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* важное: не даём стрелкам раздвигать страницу */
 
-  .slick-list,
+  .slick-list {
+    overflow: hidden; /* клип для трека и стрелок */
+  }
+
   .slick-track {
     display: flex !important;
     align-items: center;
@@ -941,22 +953,31 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
     color: #009344;
   }
 
-  
-  .slick-arrow {
-    opacity: 0.4;
-    z-index: 10;
-  }
-
+  /* зажимаем стрелки внутри, чтобы не давали горизонтальный скролл */
   .slick-prev,
   .slick-next {
-    background: none !important; 
+    background: none !important;
     border: none;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
   }
+
+  .slick-prev { left: 8px !important; }
+  .slick-next { right: 8px !important; }
 
   .slick-prev:before,
   .slick-next:before {
-    color: black; 
-    font-size: 48px;
+    color: black;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  @media (max-width: 480px) {
+    .slick-prev:before,
+    .slick-next:before {
+      font-size: 28px;
+    }
   }
 `,hk=fe.div`
   margin-top: 20px;
@@ -1016,6 +1037,8 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   }
 `,vk=fe.div`
   flex: 2;
+  min-width: 0; /* важно для предотвращения переполнения флекс-детей */
 `,yk=fe.div`
   flex: 1;
+  min-width: 0; /* не даём тянуться шире контейнера */
 `,bk=()=>{const{id:i}=US(),a=kp.find(h=>h.id===parseInt(i)),{t:n,i18n:t}=Gn(),l=t.language,s=_p(),{currency:c}=Fu(),d=H.useRef();return H.useEffect(()=>{const h=()=>{d.current?.slickGoTo(0)};return window.addEventListener("resize",h),h(),()=>window.removeEventListener("resize",h)},[]),a?k.jsxs(fk,{children:[k.jsxs(mk,{onClick:()=>s(-1),children:[k.jsx(c_,{})," ",n("Back")]}),k.jsx(dk,{children:a.title[l]}),k.jsxs(gk,{children:[k.jsxs(vk,{children:[k.jsx(pk,{ref:d,dots:!0,arrows:!0,infinite:!0,speed:500,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:3e3,children:(a.images||[a.image]).map((h,m)=>k.jsx("img",{src:`${Ht}${h}`,alt:`${a.title[l]} ${m+1}`},m))},a.id),k.jsxs(hk,{children:[k.jsxs("div",{className:"info-row",children:[k.jsx(zp,{className:"info-icon"}),k.jsx("span",{className:"info-text",children:"Full Day"})]}),k.jsxs("div",{className:"info-row",children:[k.jsx(Hp,{className:"info-icon"}),k.jsx("span",{className:"info-text",children:"Group or Individual"})]}),k.jsxs("div",{className:"info-row",children:[k.jsx(Pp,{className:"info-icon"}),k.jsxs("span",{className:"info-text",children:["From ",a.price," ",c]})]}),k.jsxs("div",{className:"info-row",children:[k.jsx(m_,{className:"info-icon"}),k.jsx("a",{className:"info-text map-link",href:"https://www.google.com/maps/place/Atlantis+The+Palm/@25.1303805,55.1171726,17z",target:"_blank",rel:"noopener noreferrer",children:"Atlantis the Palm"})]})]})]}),k.jsx(yk,{children:k.jsx(ck,{tour:a,currency:c})})]})]}):k.jsx("p",{style:{textAlign:"center"},children:n("Tour not found")})},wk=()=>{const i=H.useCallback(()=>{const n=document.getElementById("tours");n&&n.scrollIntoView({behavior:"smooth"})},[]),a=H.useCallback(()=>{const n=document.getElementById("footer");n&&n.scrollIntoView({behavior:"smooth"})},[]);return k.jsxs(Q1,{children:[k.jsx(MO,{onExcursionsClick:i,onContactClick:a}),k.jsxs(t2,{children:[k.jsx(tl,{path:"/",element:k.jsx(Y_,{})}),k.jsx(tl,{path:"/tour/:id",element:k.jsx(bk,{})})," ",k.jsx(tl,{path:"/search",element:k.jsx(K_,{})}),k.jsx(tl,{path:"*",element:k.jsx($_,{})})]}),k.jsx(jO,{id:"footer"})]})};uS.createRoot(document.getElementById("root")).render(k.jsx(re.StrictMode,{children:k.jsx(O2,{children:k.jsx(Q1,{children:k.jsx(wk,{})})})}));
