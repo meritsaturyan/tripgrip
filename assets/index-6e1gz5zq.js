@@ -593,20 +593,22 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
     color: #666;
   }
 `,yO=({onClose:i})=>M.jsxs(dO,{children:[M.jsx(vO,{onClick:i,children:M.jsx(Yp,{})}),M.jsxs(pO,{children:[M.jsx(hO,{children:"Site Registration"}),M.jsxs(mO,{children:[M.jsx(qs,{placeholder:"First Name"}),M.jsx(qs,{placeholder:"Last Name"}),M.jsx(qs,{placeholder:"E-mail",type:"email"}),M.jsx(qs,{placeholder:"Password",type:"password"}),M.jsx(gO,{children:"Sign Up"})]})]})]}),bO=fe.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 24px;
-  background-color: white;
-  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 5000;
 
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
 
-  position: sticky;   /* создаём стэкинг-контекст и фиксируем сверху */
-  top: 0;
-  z-index: 5000;      /* выше основного контента */
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+
+  /* 3 колонки: логотип | центр | правый блок */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 12px 24px;
 
   @media (max-width: 768px) {
     padding: 10px 16px;
@@ -615,6 +617,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   display: flex;
   align-items: center;
   min-width: 0;
+  justify-self: start;
 `,xO=fe.img`
   height: 60px;
   width: auto;
@@ -624,10 +627,10 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   }
 `,SO=fe.nav`
   display: flex;
-  gap: 20px;
+  gap: 24px;
   align-items: center;
+  justify-content: center;   /* ключ: центрируем пункты меню */
   min-width: 0;
-  flex: 1 1 auto;
 
   @media (max-width: 768px) {
     display: none;
@@ -642,7 +645,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   width: 100%;
   border-top: 1px solid #eee;
   padding: 16px;
-  z-index: 4500;      /* под шапкой, но над контентом */
+  z-index: 4500;
   box-sizing: border-box;
 
   @media (min-width: 769px) {
@@ -665,8 +668,8 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   align-items: center;
   gap: 16px;
   min-width: 0;
-  flex-shrink: 1;
   max-width: 100%;
+  justify-self: end;
 
   @media (max-width: 480px) {
     gap: 10px;
