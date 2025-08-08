@@ -803,7 +803,6 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-weight: 600;
         }
 
-        /* datepicker шириной как кнопка */
         .booking-form .react-datepicker-wrapper,
         .booking-form .react-datepicker__input-container,
         .booking-form .date-input {
@@ -821,17 +820,6 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
         .booking-form .date-input:focus {
           border-color: #009344;
           box-shadow: 0 0 0 3px rgba(0,147,68,0.12);
-        }
-
-        .booking-form__select {
-          width: 100%;
-          padding: 14px 16px;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          font-size: 18px;
-          background: #fff;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-          margin-top: 16px;
         }
 
         .booking-form__row {
@@ -935,13 +923,13 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
         @media (max-width: 480px) {
           .booking-form { padding: 16px; }
           .booking-form__title { font-size: 22px; margin-bottom: 16px; }
-          .booking-form .date-input, .booking-form__select { font-size: 16px; padding: 12px 14px; }
+          .booking-form .date-input { font-size: 16px; padding: 12px 14px; }
           .booking-form__btn-icon { width: 44px; height: 44px; }
           .booking-form__count { font-size: 22px; }
           .booking-form__total-label { font-size: 24px; }
           .booking-form__total-sum { font-size: 28px; }
         }
-      `}),M.jsxs("div",{className:"booking-form",children:[M.jsx("h3",{className:"booking-form__title",children:"Booking form"}),M.jsx(sk,{selected:t,onChange:O=>l(O),className:"date-input",placeholderText:"Select date"}),M.jsx("select",{className:"booking-form__select",defaultValue:"standard",children:M.jsx("option",{value:"standard",children:"Standard"})}),t&&M.jsxs(M.Fragment,{children:[M.jsxs("div",{className:"booking-form__row",children:[M.jsx("span",{className:"booking-form__label",children:"Adults"}),M.jsxs("div",{className:"booking-form__counter",children:[M.jsx("button",{className:"booking-form__btn-icon",onClick:()=>w(c),"aria-label":"Decrease adults",children:"−"}),M.jsx("span",{className:"booking-form__count",children:s}),M.jsx("button",{className:"booking-form__btn-icon",onClick:()=>b(c),"aria-label":"Increase adults",children:"+"})]}),M.jsxs("div",{className:"booking-form__row-amount",children:[a," ",n*s||0]})]}),M.jsxs("div",{className:"booking-form__row",children:[M.jsx("span",{className:"booking-form__label",children:"Children"}),M.jsxs("div",{className:"booking-form__counter",children:[M.jsx("button",{className:"booking-form__btn-icon",onClick:()=>w(h),"aria-label":"Decrease children",children:"−"}),M.jsx("span",{className:"booking-form__count",children:d}),M.jsx("button",{className:"booking-form__btn-icon",onClick:()=>b(h),"aria-label":"Increase children",children:"+"})]}),M.jsxs("div",{className:"booking-form__row-amount",children:[a," ",n*d||0]})]}),M.jsx("hr",{className:"booking-form__hr"})]}),M.jsxs("div",{className:"booking-form__total-line",children:[M.jsx("span",{className:"booking-form__total-label",children:"Total:"}),M.jsxs("div",{style:{textAlign:"right"},children:[M.jsxs("div",{className:"booking-form__total-sum",children:[a," ",v]}),M.jsx("div",{className:"booking-form__usd",children:"USD 0"})]})]}),M.jsxs("div",{className:"booking-form__payments",children:[M.jsx(l_,{size:36,"aria-label":"Apple Pay"}),M.jsx(u_,{size:44,"aria-label":"Visa"}),M.jsx(s_,{size:44,"aria-label":"Mastercard"})]}),M.jsx("button",{className:"booking-form__btn",children:"Book"}),M.jsx("div",{className:"booking-form__note",children:"Go to entering contact information"})]})]})},dk=fe.div`
+      `}),M.jsxs("div",{className:"booking-form",children:[M.jsx("h3",{className:"booking-form__title",children:"Booking form"}),M.jsx(sk,{selected:t,onChange:O=>l(O),className:"date-input",placeholderText:"Select date"}),t&&M.jsxs(M.Fragment,{children:[M.jsxs("div",{className:"booking-form__row",children:[M.jsx("span",{className:"booking-form__label",children:"Adults"}),M.jsxs("div",{className:"booking-form__counter",children:[M.jsx("button",{className:"booking-form__btn-icon",onClick:()=>w(c),children:"−"}),M.jsx("span",{className:"booking-form__count",children:s}),M.jsx("button",{className:"booking-form__btn-icon",onClick:()=>b(c),children:"+"})]}),M.jsxs("div",{className:"booking-form__row-amount",children:[a," ",n*s||0]})]}),M.jsxs("div",{className:"booking-form__row",children:[M.jsx("span",{className:"booking-form__label",children:"Children"}),M.jsxs("div",{className:"booking-form__counter",children:[M.jsx("button",{className:"booking-form__btn-icon",onClick:()=>w(h),children:"−"}),M.jsx("span",{className:"booking-form__count",children:d}),M.jsx("button",{className:"booking-form__btn-icon",onClick:()=>b(h),children:"+"})]}),M.jsxs("div",{className:"booking-form__row-amount",children:[a," ",n*d||0]})]}),M.jsx("hr",{className:"booking-form__hr"})]}),M.jsxs("div",{className:"booking-form__total-line",children:[M.jsx("span",{className:"booking-form__total-label",children:"Total:"}),M.jsxs("div",{style:{textAlign:"right"},children:[M.jsxs("div",{className:"booking-form__total-sum",children:[a," ",v]}),M.jsx("div",{className:"booking-form__usd",children:"USD 0"})]})]}),M.jsxs("div",{className:"booking-form__payments",children:[M.jsx(l_,{size:36}),M.jsx(u_,{size:44}),M.jsx(s_,{size:44})]}),M.jsx("button",{className:"booking-form__btn",children:"Book"}),M.jsx("div",{className:"booking-form__note",children:"Go to entering contact information"})]})]})},dk=fe.div`
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
