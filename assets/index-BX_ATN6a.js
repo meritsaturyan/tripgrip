@@ -1126,25 +1126,17 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
-
-  @media (max-width: 960px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (max-width: 560px) {
-    grid-template-columns: 1fr;
-  }
+  @media (max-width: 960px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 560px) { grid-template-columns: 1fr; }
 `,JM=ue.button`
-  display: block;
   width: 100%;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
-  text-align: center;
   padding-bottom: 10px;
+  cursor: pointer;
   transition: transform .15s ease, box-shadow .15s ease;
-
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(0,0,0,.08);
@@ -1152,15 +1144,13 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
 `,e6=ue.div`
   width: 100%;
   aspect-ratio: 16/9;
-  overflow: hidden;
   background: #f5f5f5;
 `,t6=ue.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 `,n6=ue.div`
   font-size: 18px;
   color: #333;
   margin-top: 12px;
-`;function n1(){const i=Jr(),a=[{title:"Introducing",img:"https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=1200&auto=format&fit=crop",slug:"introducing"},{title:"Dubai History",img:"https://images.unsplash.com/photo-1546412414-8035e1776c9a?q=80&w=1200&auto=format&fit=crop",slug:"dubai_history"},{title:"UAE History",img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",slug:"uae_history"},{title:"Old Dubai",img:"https://images.unsplash.com/photo-1549045337-967927d923c0?q=80&w=1200&auto=format&fit=crop",slug:"old_dubai"},{title:"Industrial Area",img:"https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200&auto=format&fit=crop",slug:"industrial_area"},{title:"New Dubai",img:"https://cdn.pixabay.com/photo/2016/11/19/15/57/dubai-1836517_1280.jpg",slug:"new_dubai"},{title:"Beach side",img:"https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?q=80&w=1200&auto=format&fit=crop",slug:"beach_side"},{title:"Residential",img:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop",slug:"residential"},{title:"Traditions",img:"https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1200&auto=format&fit=crop",slug:"traditions"},{title:"Law in UAE",img:"https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=1200&auto=format&fit=crop",slug:"law_in_uae"},{title:"Arabic dates",img:"https://images.unsplash.com/photo-1600431521340-491eca880813?q=80&w=1200&auto=format&fit=crop",slug:"arabic_dates"},{title:"Wind-Catchers",img:"https://cdn.pixabay.com/photo/2016/11/14/04/16/architecture-1822525_1280.jpg",slug:"wind_catchers"},{title:"Dubai coral reefs",img:"https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop",slug:"coral_reefs"},{title:"Majlis",img:"https://cdn.pixabay.com/photo/2016/11/20/08/16/people-1845974_1280.jpg",slug:"majlis"}];return S.jsxs($M,{children:[S.jsx(KM,{children:"Introducing Dubai"}),S.jsx(XM,{children:"Get to know the UAE better"}),S.jsx(ZM,{children:a.map(n=>S.jsxs(JM,{onClick:()=>i(`/info/${n.slug}`),children:[S.jsx(e6,{children:S.jsx(t6,{src:n.img,alt:n.title,loading:"lazy"})}),S.jsx(n6,{children:n.title})]},n.slug))})]})}const r6=()=>{const i=H.useCallback(()=>{const n=document.getElementById("tours");n&&n.scrollIntoView({behavior:"smooth"})},[]),a=H.useCallback(()=>{const n=document.getElementById("footer");n&&n.scrollIntoView({behavior:"smooth"})},[]);return S.jsxs(tb,{children:[S.jsx(B4,{onExcursionsClick:i,onContactClick:a}),S.jsxs(p2,{children:[S.jsx(Gr,{path:"/",element:S.jsx(Z_,{})}),S.jsx(Gr,{path:"/tour/:id",element:S.jsx(zM,{})}),S.jsx(Gr,{path:"/search",element:S.jsx(s4,{})}),S.jsx(Gr,{path:"/checkout",element:S.jsx(WM,{})}),S.jsx(Gr,{path:"/info/introducing_dubai",element:S.jsx(n1,{})}),S.jsx(Gr,{path:"/info/:slug",element:S.jsx(n1,{})}),S.jsx(Gr,{path:"*",element:S.jsx(u4,{})})]}),S.jsx(W4,{id:"footer"})]})};wS.createRoot(document.getElementById("root")).render(S.jsx(re.StrictMode,{children:S.jsx(H2,{children:S.jsx(tb,{children:S.jsx(r6,{})})})}));
+`;function n1(){const i=Jr(),a=[{title:"Introducing",img:"https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg",slug:"introducing"},{title:"Dubai History",img:"https://images.pexels.com/photos/278029/pexels-photo-278029.jpeg",slug:"dubai_history"},{title:"UAE History",img:"https://images.pexels.com/photos/2254/landmark-building-heritage-arabic.jpg",slug:"uae_history"},{title:"Old Dubai",img:"https://images.pexels.com/photos/3607453/pexels-photo-3607453.jpeg",slug:"old_dubai"},{title:"Industrial Area",img:"https://images.pexels.com/photos/295695/pexels-photo-295695.jpeg",slug:"industrial_area"},{title:"New Dubai",img:"https://images.pexels.com/photos/467004/pexels-photo-467004.jpeg",slug:"new_dubai"},{title:"Beach side",img:"https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg",slug:"beach_side"},{title:"Residential",img:"https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg",slug:"residential"},{title:"Traditions",img:"https://images.pexels.com/photos/3901346/pexels-photo-3901346.jpeg",slug:"traditions"},{title:"Law in UAE",img:"https://images.pexels.com/photos/566848/pexels-photo-566848.jpeg",slug:"law_in_uae"},{title:"Arabic dates",img:"https://images.pexels.com/photos/257089/pexels-photo-257089.jpeg",slug:"arabic_dates"},{title:"Wind-Catchers",img:"https://images.pexels.com/photos/261528/pexels-photo-261528.jpeg",slug:"wind_catchers"},{title:"Dubai coral reefs",img:"https://images.pexels.com/photos/235399/pexels-photo-235399.jpeg",slug:"coral_reefs"},{title:"Majlis",img:"https://images.pexels.com/photos/2098117/pexels-photo-2098117.jpeg",slug:"majlis"}];return S.jsxs($M,{children:[S.jsx(KM,{children:"Introducing Dubai"}),S.jsx(XM,{children:"Get to know the UAE better"}),S.jsx(ZM,{children:a.map(n=>S.jsxs(JM,{onClick:()=>i(`/info/${n.slug}`),children:[S.jsx(e6,{children:S.jsx(t6,{src:`${n.img}?auto=compress&cs=tinysrgb&dpr=2&w=640`,alt:n.title})}),S.jsx(n6,{children:n.title})]},n.slug))})]})}const r6=()=>{const i=H.useCallback(()=>{const n=document.getElementById("tours");n&&n.scrollIntoView({behavior:"smooth"})},[]),a=H.useCallback(()=>{const n=document.getElementById("footer");n&&n.scrollIntoView({behavior:"smooth"})},[]);return S.jsxs(tb,{children:[S.jsx(B4,{onExcursionsClick:i,onContactClick:a}),S.jsxs(p2,{children:[S.jsx(Gr,{path:"/",element:S.jsx(Z_,{})}),S.jsx(Gr,{path:"/tour/:id",element:S.jsx(zM,{})}),S.jsx(Gr,{path:"/search",element:S.jsx(s4,{})}),S.jsx(Gr,{path:"/checkout",element:S.jsx(WM,{})}),S.jsx(Gr,{path:"/info/introducing_dubai",element:S.jsx(n1,{})}),S.jsx(Gr,{path:"/info/:slug",element:S.jsx(n1,{})}),S.jsx(Gr,{path:"*",element:S.jsx(u4,{})})]}),S.jsx(W4,{id:"footer"})]})};wS.createRoot(document.getElementById("root")).render(S.jsx(re.StrictMode,{children:S.jsx(H2,{children:S.jsx(tb,{children:S.jsx(r6,{})})})}));
