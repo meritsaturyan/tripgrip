@@ -195,18 +195,28 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
     background-color: #15542a;
   }
 `,E_=()=>{const{t:i}=Gn();return T.jsxs(__,{children:[T.jsx("h2",{children:i("description.title")}),T.jsx("p",{children:i("description.intro1")}),T.jsx("p",{children:i("description.intro2")}),T.jsx("img",{src:`${Ht}anapat.jpg`,alt:"Anapat",style:{width:"400px",maxWidth:"100%",height:"auto",marginTop:"30px",borderRadius:"8px",display:"block",marginLeft:"auto",marginRight:"auto"}}),T.jsx("p",{children:i("description.dubai_text1")}),T.jsx("p",{children:i("description.dubai_text2")}),T.jsx("h3",{children:i("description.subtitle")}),T.jsx("p",{children:i("description.overview")}),T.jsx("p",{children:i("description.cruise")}),T.jsx("p",{children:i("description.safari")}),T.jsx("p",{children:i("description.kids_parks")}),T.jsx("img",{src:`${Ht}dubai.jpg`,alt:"Dubai",className:"image"}),T.jsx("p",{children:i("description.waterparks")}),T.jsx("p",{children:i("description.activities")}),T.jsx("p",{children:i("description.custom_tour")}),T.jsx("p",{children:i("description.ending")}),T.jsx(O_,{children:i("description.select_tour")})]})},q1=H.createContext(),Q1=({children:i})=>{const[a,n]=H.useState(()=>localStorage.getItem("currency")||"AED");return H.useEffect(()=>{localStorage.setItem("currency",a)},[a]),T.jsx(q1.Provider,{value:{currency:a,setCurrency:n},children:i})},Fu=()=>H.useContext(q1),_y=fe.div`
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
 `,C_=fe.div`
+  width: 100%;
+  max-width: 1100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  max-width: 1100px;
+  box-sizing: border-box;
 `,M_=fe.div`
-  width: 345.69px;
+  width: 100%;
+  max-width: 345.69px;   /* было: width: 345.69px; — из-за этого и был горизонтальный скролл */
   border: 1px solid #ddd;
   border-radius: 12px;
   background: #fff;
@@ -228,6 +238,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 `,R_=fe.span`
   position: absolute;
   top: 8px;
@@ -241,6 +252,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   text-transform: capitalize;
 `,N_=fe.div`
   padding: 12px;
+  box-sizing: border-box;
 `,A_=fe.h3`
   font-size: 1rem;
   font-weight: bold;
@@ -262,6 +274,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   text-align: center;
   color: #1e7b3c;
   margin-bottom: 12px;
+  overflow-wrap: anywhere; /* перестраховка от переполнения длинными словами */
 `,z_=fe.p`
   font-size: 1.1rem;
   text-align: center;
@@ -275,6 +288,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   padding: 30px 20px;
   margin: 40px 0;
   width: 100%;
+  box-sizing: border-box;
 `,H_=fe.div`
   display: flex;
   justify-content: center;
