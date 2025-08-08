@@ -957,11 +957,13 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
     align-items: center;
     justify-content: center;
   }
+
   .slick-slide {
     display: flex !important;
     justify-content: center;
     align-items: center;
   }
+
   .slick-slide img {
     width: 100%;
     height: auto;
@@ -974,6 +976,8 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   .slick-arrow { opacity: 0.6; z-index: 2; }
   .slick-prev, .slick-next { background: none !important; border: none; }
   .slick-prev:before, .slick-next:before { color: #000; font-size: 36px; }
+
+  /* стрелки строго внутри контейнера */
   .slick-prev { left: 8px; }
   .slick-next { right: 8px; }
 `,gM=fe.div`
@@ -990,14 +994,25 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
     gap: 8px;
     flex-wrap: wrap;
   }
-  .info-icon { color: #009344; font-size: 18px; }
-  .info-text { color: #333; font-weight: 400; }
+
+  .info-icon {
+    color: #009344;
+    font-size: 18px;
+  }
+
+  .info-text {
+    color: #333;
+    font-weight: 400;
+  }
 
   .map-link {
     text-decoration: none;
     color: #009344;
     font-weight: 500;
-    &:hover { text-decoration: underline; }
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `,vM=fe.button`
   margin-bottom: 20px;
@@ -1009,12 +1024,25 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   display: flex;
   align-items: center;
   gap: 6px;
-  &:hover { border-color: #999; }
+
+  &:hover {
+    border-color: #999;
+  }
 `,yM=fe.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 960px) { flex-direction: row; gap: 40px; }
-`,bM=fe.div` flex: 2; min-width: 0; `,wM=fe.div` flex: 1; min-width: 0; `,xM=fe.section`
+
+  @media (min-width: 960px) {
+    flex-direction: row;
+    gap: 40px;
+  }
+`,bM=fe.div`
+  flex: 2;
+  min-width: 0;
+`,wM=fe.div`
+  flex: 1;
+  min-width: 0;
+`,xM=fe.section`
   margin-top: 28px;
   border: 1px solid #e9e9e9;
   border-radius: 12px;
@@ -1030,4 +1058,4 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   color: #444;
   line-height: 1.6;
   li + li { margin-top: 6px; }
-`,DM=()=>{const{id:i}=BS(),a=Mp.find(v=>v.id===parseInt(i,10)),{t:n,i18n:t}=Gn(),l=t.language,s=_p(),{currency:c}=Qu(),d=H.useRef();if(H.useEffect(()=>{const v=()=>d.current?.slickGoTo(0);return window.addEventListener("resize",v),v(),()=>window.removeEventListener("resize",v)},[]),!a)return k.jsx("p",{style:{textAlign:"center"},children:n("Tour not found")});const h=a.mapTitle&&(a.mapTitle[l]||a.mapTitle)||a.title&&a.title[l]||"Location";let m="";return a.mapUrl?m=a.mapUrl:a.coords&&typeof a.coords.lat=="number"&&typeof a.coords.lng=="number"?m=`https://www.google.com/maps/search/?api=1&query=${a.coords.lat},${a.coords.lng}`:m=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(h)}`,k.jsxs(pM,{children:[k.jsxs(vM,{onClick:()=>s(-1),children:[k.jsx(f_,{})," ",n("Back")]}),k.jsx(hM,{children:a.title[l]}),k.jsxs(yM,{children:[k.jsxs(bM,{children:[k.jsx(mM,{ref:d,dots:!0,arrows:!0,infinite:!0,speed:500,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:3e3,children:(a.images||[a.image]).map((v,b)=>k.jsx("img",{src:`${Ht}${v}`,alt:`${a.title[l]} ${b+1}`},b))},a.id),k.jsxs(gM,{children:[k.jsxs("div",{className:"info-row",children:[k.jsx(zp,{className:"info-icon"}),k.jsx("span",{className:"info-text",children:"Full Day"})]}),k.jsxs("div",{className:"info-row",children:[k.jsx(Hp,{className:"info-icon"}),k.jsx("span",{className:"info-text",children:"Group or Individual"})]}),k.jsxs("div",{className:"info-row",children:[k.jsx(Pp,{className:"info-icon"}),k.jsxs("span",{className:"info-text",children:["From ",a.price," ",c]})]}),k.jsxs("div",{className:"info-row",children:[k.jsx(g_,{className:"info-icon"}),k.jsx("a",{className:"info-text map-link",href:m,target:"_blank",rel:"noopener noreferrer",children:h})]})]}),(a.info?.timing||a.info?.notes&&a.info.notes.length)&&k.jsxs(xM,{children:[a.info?.timing&&k.jsxs(k.Fragment,{children:[k.jsx(W0,{children:"Park Timing:"}),k.jsx("div",{style:{color:"#444",marginBottom:12},children:a.info.timing})]}),a.info?.notes?.length>0&&k.jsxs(k.Fragment,{children:[k.jsx(W0,{children:"Know before you go:"}),k.jsx(SM,{children:a.info.notes.map((v,b)=>k.jsx("li",{children:v},b))})]})]})]}),k.jsx(wM,{children:k.jsx(dM,{tour:a,currency:c})})]})]})},_M=()=>{const i=H.useCallback(()=>{const n=document.getElementById("tours");n&&n.scrollIntoView({behavior:"smooth"})},[]),a=H.useCallback(()=>{const n=document.getElementById("footer");n&&n.scrollIntoView({behavior:"smooth"})},[]);return k.jsx(Q1,{children:k.jsxs("div",{style:{overflowX:"clip",width:"100%"},children:[k.jsx(TO,{onExcursionsClick:i,onContactClick:a}),k.jsxs(n2,{children:[k.jsx(tl,{path:"/",element:k.jsx(U_,{})}),k.jsx(tl,{path:"/tour/:id",element:k.jsx(DM,{})}),k.jsx(tl,{path:"/search",element:k.jsx($_,{})}),k.jsx(tl,{path:"*",element:k.jsx(X_,{})})]}),k.jsx(zO,{id:"footer"})]})})};cS.createRoot(document.getElementById("root")).render(k.jsx(re.StrictMode,{children:k.jsx(E2,{children:k.jsx(Q1,{children:k.jsx(_M,{})})})}));
+`,DM=()=>{const{id:i}=BS(),a=Mp.find(v=>v.id===parseInt(i,10)),{t:n,i18n:t}=Gn(),l=t.language,s=_p(),{currency:c}=Qu(),d=H.useRef();if(H.useEffect(()=>{const v=()=>{d.current?.slickGoTo(0)};return window.addEventListener("resize",v),v(),()=>window.removeEventListener("resize",v)},[]),!a)return k.jsx("p",{style:{textAlign:"center"},children:n("Tour not found")});const h=a.mapTitle&&(a.mapTitle[l]||a.mapTitle)||a.title&&a.title[l]||"Location";let m="";return a.mapUrl?m=a.mapUrl:a.coords&&typeof a.coords.lat=="number"&&typeof a.coords.lng=="number"?m=`https://www.google.com/maps/search/?api=1&query=${a.coords.lat},${a.coords.lng}`:m=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(h)}`,k.jsxs(pM,{children:[k.jsxs(vM,{onClick:()=>s(-1),children:[k.jsx(f_,{})," ",n("Back")]}),k.jsx(hM,{children:a.title[l]}),k.jsxs(yM,{children:[k.jsxs(bM,{children:[k.jsx(mM,{ref:d,dots:!0,arrows:!0,infinite:!0,speed:500,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:3e3,children:(a.images||[a.image]).map((v,b)=>k.jsx("img",{src:`${Ht}${v}`,alt:`${a.title[l]} ${b+1}`},b))},a.id),k.jsxs(gM,{children:[k.jsxs("div",{className:"info-row",children:[k.jsx(zp,{className:"info-icon"}),k.jsx("span",{className:"info-text",children:"Full Day"})]}),k.jsxs("div",{className:"info-row",children:[k.jsx(Hp,{className:"info-icon"}),k.jsx("span",{className:"info-text",children:"Group or Individual"})]}),k.jsxs("div",{className:"info-row",children:[k.jsx(Pp,{className:"info-icon"}),k.jsxs("span",{className:"info-text",children:["From ",a.price," ",c]})]}),k.jsxs("div",{className:"info-row",children:[k.jsx(g_,{className:"info-icon"}),k.jsx("a",{className:"info-text map-link",href:m,target:"_blank",rel:"noopener noreferrer",children:h})]})]}),(a.info?.timing||a.info?.notes&&a.info.notes.length)&&k.jsxs(xM,{children:[a.info?.timing&&k.jsxs(k.Fragment,{children:[k.jsx(W0,{children:"Park Timing:"}),k.jsx("div",{style:{color:"#444",marginBottom:12},children:a.info.timing})]}),a.info?.notes?.length>0&&k.jsxs(k.Fragment,{children:[k.jsx(W0,{children:"Know before you go:"}),k.jsx(SM,{children:a.info.notes.map((v,b)=>k.jsx("li",{children:v},b))})]})]})]}),k.jsx(wM,{children:k.jsx(dM,{tour:a,currency:c})})]})]})},_M=()=>{const i=H.useCallback(()=>{const n=document.getElementById("tours");n&&n.scrollIntoView({behavior:"smooth"})},[]),a=H.useCallback(()=>{const n=document.getElementById("footer");n&&n.scrollIntoView({behavior:"smooth"})},[]);return k.jsx(Q1,{children:k.jsxs("div",{style:{overflowX:"clip",width:"100%"},children:[k.jsx(TO,{onExcursionsClick:i,onContactClick:a}),k.jsxs(n2,{children:[k.jsx(tl,{path:"/",element:k.jsx(U_,{})}),k.jsx(tl,{path:"/tour/:id",element:k.jsx(DM,{})}),k.jsx(tl,{path:"/search",element:k.jsx($_,{})}),k.jsx(tl,{path:"*",element:k.jsx(X_,{})})]}),k.jsx(zO,{id:"footer"})]})})};cS.createRoot(document.getElementById("root")).render(k.jsx(re.StrictMode,{children:k.jsx(E2,{children:k.jsx(Q1,{children:k.jsx(_M,{})})})}));
