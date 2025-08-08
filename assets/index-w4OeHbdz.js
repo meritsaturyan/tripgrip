@@ -803,7 +803,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
 
         /* инпут */
         .booking-form .date-input {
-          width: 340px; /* длиннее на ПК */
+          width: 380px; /* длиннее на ПК */
           max-width: 100%; /* но не выходит за рамки */
           box-sizing: border-box;
           padding: 12px 16px;
