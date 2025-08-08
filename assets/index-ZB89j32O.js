@@ -1035,12 +1035,20 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   margin-top: 16px;
   padding: 14px;
   border: none;
-  border-radius: 24px;
-  background: #0a9b52;
+  border-radius: 40px;
+  background: #009e56;
   color: #fff;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  svg {
+    font-size: 30px;
+  }
 `,UM=ce.h3`
   margin: 0 0 14px;
   color: #0a9b52;
@@ -1057,7 +1065,9 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   gap: 12px;
   font-size: 16px;
   color: #666;
-  & + & { margin-top: 14px; }
+  & + & {
+    margin-top: 14px;
+  }
 `,al=ce.span`
   color: #6a6a6a;
 `,qM=ce.div`
@@ -1094,4 +1104,4 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   justify-content: center;
   color: #8a8a8a;
   font-size: 20px;
-`;function IM(){const[i]=q2(),{currency:a}=wl(),n=qi(),t=Number(i.get("id")),l=i.get("date")||"",s=i.get("time")||"10:00",c=i.get("ticket")||"Standard",d=Number(i.get("adults")||0),h=Number(i.get("children")||0),m=Number(i.get("total")||0),v=Fu.find(w=>w.id===t);return S.jsxs(zM,{children:[S.jsxs(t1,{children:[S.jsx(PM,{children:"Please enter details"}),S.jsx("p",{style:{color:"#777",marginTop:-10,marginBottom:14},children:"If you are booking for someone else, please mention their details"}),S.jsx(up,{children:"Full Name"}),S.jsx(cp,{placeholder:"Full Name"}),S.jsx(up,{children:"E-mail"}),S.jsx(cp,{type:"email",placeholder:"E-mail"}),S.jsx(up,{children:"Phone"}),S.jsxs("div",{style:{display:"grid",gridTemplateColumns:"1fr 2fr",gap:10},children:[S.jsxs(HM,{defaultValue:"AE",children:[S.jsx("option",{value:"AE",children:"UAE (+971)"}),S.jsx("option",{value:"AM",children:"Armenia (+374)"}),S.jsx("option",{value:"RU",children:"Russia (+7)"}),S.jsx("option",{value:"US",children:"USA (+1)"}),S.jsx("option",{value:"GB",children:"UK (+44)"})]}),S.jsx(cp,{placeholder:"Phone number"})]}),S.jsxs(YM,{onClick:()=>alert("Redirect to payment gateway…"),children:[S.jsx("span",{style:{fontWeight:600},children:"Pay"}),S.jsx(X1,{style:{fontSize:28}}),S.jsx(K1,{style:{fontSize:28}})]}),S.jsxs("div",{style:{marginTop:16,color:"#666",fontSize:14},children:[S.jsxs("label",{style:{display:"flex",gap:8,alignItems:"center"},children:[S.jsx("input",{type:"checkbox",defaultChecked:!0})," Payment information"]}),S.jsxs("label",{style:{display:"flex",gap:8,alignItems:"center",marginTop:6},children:[S.jsx("input",{type:"checkbox",defaultChecked:!0})," Cancellation terms"]})]})]}),S.jsxs(t1,{children:[S.jsx(UM,{children:v?v.title.en:"Tickets"}),S.jsx(BM,{}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(D_,{})}),S.jsx(al,{children:"Date:"})," ",l]}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(Ku,{})}),S.jsx(al,{children:"Time:"})," ",s]}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(Xu,{})}),S.jsx(al,{children:"Ticket:"})," ",c]}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(Z1,{})}),S.jsx(al,{children:"Adults:"})," ",d]}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(E_,{})}),S.jsx(al,{children:"Children:"})," ",h]}),S.jsxs(qM,{children:[S.jsxs(FM,{children:[S.jsx("span",{children:"Total"}),S.jsxs(QM,{children:[a," ",m]})]}),S.jsxs(VM,{children:["USD ",0]})]}),S.jsx(GM,{onClick:()=>n(-1),children:"← Back"})]})]})}const WM=()=>{const i=H.useCallback(()=>{const n=document.getElementById("tours");n&&n.scrollIntoView({behavior:"smooth"})},[]),a=H.useCallback(()=>{const n=document.getElementById("footer");n&&n.scrollIntoView({behavior:"smooth"})},[]);return S.jsxs(eb,{children:[S.jsx(UO,{onExcursionsClick:i,onContactClick:a}),S.jsxs(d2,{children:[S.jsx(Di,{path:"/",element:S.jsx(X_,{})}),S.jsx(Di,{path:"/tour/:id",element:S.jsx(jM,{})}),S.jsx(Di,{path:"/search",element:S.jsx(lO,{})}),S.jsx(Di,{path:"/checkout",element:S.jsx(IM,{})})," ",S.jsx(Di,{path:"*",element:S.jsx(sO,{})})]}),S.jsx(IO,{id:"footer"})]})};xS.createRoot(document.getElementById("root")).render(S.jsx(re.StrictMode,{children:S.jsx(P2,{children:S.jsx(eb,{children:S.jsx(WM,{})})})}));
+`;function IM(){const[i]=q2(),{currency:a}=wl(),n=qi(),t=Number(i.get("id")),l=i.get("date")||"",s=i.get("time")||"10:00",c=i.get("ticket")||"Standard",d=Number(i.get("adults")||0),h=Number(i.get("children")||0),m=Number(i.get("total")||0),v=Fu.find(w=>w.id===t);return S.jsxs(zM,{children:[S.jsxs(t1,{children:[S.jsx(PM,{children:"Please enter details"}),S.jsx("p",{style:{color:"#777",marginTop:-10,marginBottom:14},children:"If you are booking for someone else, please mention their details"}),S.jsx(up,{children:"Full Name"}),S.jsx(cp,{placeholder:"Full Name"}),S.jsx(up,{children:"E-mail"}),S.jsx(cp,{type:"email",placeholder:"E-mail"}),S.jsx(up,{children:"Phone"}),S.jsxs("div",{style:{display:"grid",gridTemplateColumns:"1fr 2fr",gap:10},children:[S.jsxs(HM,{defaultValue:"AE",children:[S.jsx("option",{value:"AE",children:"UAE (+971)"}),S.jsx("option",{value:"AM",children:"Armenia (+374)"}),S.jsx("option",{value:"RU",children:"Russia (+7)"}),S.jsx("option",{value:"US",children:"USA (+1)"}),S.jsx("option",{value:"GB",children:"UK (+44)"})]}),S.jsx(cp,{placeholder:"Phone number"})]}),S.jsxs(YM,{onClick:()=>alert("Redirect to payment gateway…"),children:[S.jsx("span",{style:{fontWeight:700},children:"Pay"}),S.jsx(X1,{color:"#1A1F71"}),S.jsx(K1,{color:"#EB001B"})]}),S.jsxs("div",{style:{marginTop:16,color:"#666",fontSize:14},children:[S.jsxs("label",{style:{display:"flex",gap:8,alignItems:"center"},children:[S.jsx("input",{type:"checkbox",defaultChecked:!0})," Payment information"]}),S.jsxs("label",{style:{display:"flex",gap:8,alignItems:"center",marginTop:6},children:[S.jsx("input",{type:"checkbox",defaultChecked:!0})," Cancellation terms"]})]})]}),S.jsxs(t1,{children:[S.jsx(UM,{children:v?v.title.en:"Tickets"}),S.jsx(BM,{}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(D_,{})}),S.jsx(al,{children:"Date:"})," ",l]}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(Ku,{})}),S.jsx(al,{children:"Time:"})," ",s]}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(Xu,{})}),S.jsx(al,{children:"Ticket:"})," ",c]}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(Z1,{})}),S.jsx(al,{children:"Adults:"})," ",d]}),S.jsxs(rl,{children:[S.jsx(il,{children:S.jsx(E_,{})}),S.jsx(al,{children:"Children:"})," ",h]}),S.jsxs(qM,{children:[S.jsxs(FM,{children:[S.jsx("span",{children:"Total"}),S.jsxs(QM,{children:[a," ",m]})]}),S.jsxs(VM,{children:["USD ",0]})]}),S.jsx(GM,{onClick:()=>n(-1),children:"← Back"})]})]})}const WM=()=>{const i=H.useCallback(()=>{const n=document.getElementById("tours");n&&n.scrollIntoView({behavior:"smooth"})},[]),a=H.useCallback(()=>{const n=document.getElementById("footer");n&&n.scrollIntoView({behavior:"smooth"})},[]);return S.jsxs(eb,{children:[S.jsx(UO,{onExcursionsClick:i,onContactClick:a}),S.jsxs(d2,{children:[S.jsx(Di,{path:"/",element:S.jsx(X_,{})}),S.jsx(Di,{path:"/tour/:id",element:S.jsx(jM,{})}),S.jsx(Di,{path:"/search",element:S.jsx(lO,{})}),S.jsx(Di,{path:"/checkout",element:S.jsx(IM,{})})," ",S.jsx(Di,{path:"*",element:S.jsx(sO,{})})]}),S.jsx(IO,{id:"footer"})]})};xS.createRoot(document.getElementById("root")).render(S.jsx(re.StrictMode,{children:S.jsx(P2,{children:S.jsx(eb,{children:S.jsx(WM,{})})})}));
