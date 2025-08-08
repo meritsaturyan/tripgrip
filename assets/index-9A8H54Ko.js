@@ -808,9 +808,10 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-weight: 600;
         }
 
-        /* сам input react-datepicker */
+        /* инпут */
         .booking-form .date-input {
-          width: 100%;
+          width: 340px; /* длиннее на ПК */
+          max-width: 100%; /* но не выходит за рамки */
           box-sizing: border-box;
           padding: 12px 16px;
           border: 1px solid #ccc;
@@ -825,14 +826,12 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           box-shadow: 0 0 0 3px rgba(0,147,68,0.12);
         }
 
-        /* тонкая полоска-разделитель */
         .booking-form__hr {
           border: none;
           border-top: 1px dashed #aaa;
           margin: 24px 0;
         }
 
-        /* кнопка */
         .booking-form__btn {
           width: 100%;
           padding: 12px;
@@ -845,7 +844,6 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-weight: 500;
         }
 
-        /* ряд Total */
         .booking-form__row {
           display: flex;
           justify-content: space-between;
@@ -870,7 +868,6 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           color: #888;
         }
 
-        /* иконки оплаты */
         .booking-form__payments {
           display: flex;
           justify-content: center;
@@ -887,7 +884,6 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           color: #777;
         }
 
-        /* адаптив — чуть уменьшаем отступы на очень узких экранах */
         @media (max-width: 480px) {
           .booking-form {
             padding: 16px;
@@ -897,11 +893,12 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
             margin-bottom: 16px;
           }
           .booking-form .date-input {
+            width: 100%; /* на телефоне всегда 100% */
             font-size: 15px;
             padding: 10px 14px;
           }
         }
-      `}),k.jsxs("div",{className:"booking-form",children:[k.jsx("h3",{className:"booking-form__title",children:"Booking form"}),k.jsx(sk,{selected:n,onChange:l=>t(l),className:"date-input",wrapperClassName:"date-wrapper",calendarClassName:"custom-calendar",popperPlacement:"bottom-start",placeholderText:"Select date"}),k.jsx("hr",{className:"booking-form__hr"}),k.jsxs("div",{className:"booking-form__row",children:[k.jsx("span",{className:"booking-form__label",children:"Total:"}),k.jsxs("div",{className:"booking-form__amount",children:[k.jsxs("div",{className:"booking-form__amount-main",children:[i.price," ",a]}),k.jsx("div",{className:"booking-form__amount-sub",children:"USD 0"})]})]}),k.jsxs("div",{className:"booking-form__payments",children:[k.jsx(u_,{size:36,"aria-label":"Visa"}),k.jsx(s_,{size:36,"aria-label":"Mastercard"}),k.jsx(l_,{size:36,"aria-label":"Apple Pay"})]}),k.jsx("button",{className:"booking-form__btn",children:"Book"}),k.jsx("div",{className:"booking-form__note",children:"Go to entering contact information"})]})]})},fk=fe.div`
+      `}),k.jsxs("div",{className:"booking-form",children:[k.jsx("h3",{className:"booking-form__title",children:"Booking form"}),k.jsx(sk,{selected:n,onChange:l=>t(l),className:"date-input",placeholderText:"Select date"}),k.jsx("hr",{className:"booking-form__hr"}),k.jsxs("div",{className:"booking-form__row",children:[k.jsx("span",{className:"booking-form__label",children:"Total:"}),k.jsxs("div",{className:"booking-form__amount",children:[k.jsxs("div",{className:"booking-form__amount-main",children:[i.price," ",a]}),k.jsx("div",{className:"booking-form__amount-sub",children:"USD 0"})]})]}),k.jsxs("div",{className:"booking-form__payments",children:[k.jsx(u_,{size:36,"aria-label":"Visa"}),k.jsx(s_,{size:36,"aria-label":"Mastercard"}),k.jsx(l_,{size:36,"aria-label":"Apple Pay"})]}),k.jsx("button",{className:"booking-form__btn",children:"Book"}),k.jsx("div",{className:"booking-form__note",children:"Go to entering contact information"})]})]})},fk=fe.div`
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
