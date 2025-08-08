@@ -203,20 +203,19 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 480px) {
-    padding: 16px;
-  }
+  @media (max-width: 480px) { padding: 16px; }
 `,C_=fe.div`
   width: 100%;
   max-width: 1100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin: 0 auto;
+  display: grid;
   gap: 20px;
-  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  align-items: stretch; /* ключ! все карточки равной высоты */
 `,M_=fe.div`
-  width: 100%;
-  max-width: 345.69px;   /* было: width: 345.69px; — из-за этого и был горизонтальный скролл */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid #ddd;
   border-radius: 12px;
   background: #fff;
@@ -232,7 +231,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
 `,T_=fe.div`
   position: relative;
   width: 100%;
-  height: 172.98px;
+  aspect-ratio: 16/9; /* вместо фикс. пикселей */
   overflow: hidden;
 `,k_=fe.img`
   width: 100%;
@@ -253,10 +252,14 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
 `,N_=fe.div`
   padding: 12px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1; /* тянем контент, чтобы низ прижался */
 `,A_=fe.h3`
   font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin: 0 0 4px 0;
 `,Oy=fe.div`
   font-size: 0.85rem;
   color: #555;
@@ -267,14 +270,14 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
 `,L_=fe.div`
   color: #2ecc71;
   font-weight: 600;
-  margin-top: 8px;
+  margin-top: auto; /* цена прижата вниз, высота карточек стабильно одинаковая */
 `,j_=fe.h1`
   font-size: 4rem;
   font-weight: 700;
   text-align: center;
   color: #1e7b3c;
   margin-bottom: 12px;
-  overflow-wrap: anywhere; /* перестраховка от переполнения длинными словами */
+  overflow-wrap: anywhere;
 `,z_=fe.p`
   font-size: 1.1rem;
   text-align: center;
@@ -306,7 +309,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
 `,Nd=fe.div`
   font-size: 0.95rem;
   color: #444;
-`,Y_=()=>{const{i18n:i,t:a}=Gn(),{currency:n}=Fu(),t=i.language,[l,s]=H.useState(""),[c,d]=H.useState([]),[h,m]=H.useState([]),[v,b]=H.useState(!1),[x,C]=H.useState(!1),O=H.useMemo(()=>{let k=[...kp];c.length>0&&(k=k.filter(Y=>c.includes(Y.category))),h.length>0&&(k=k.filter(Y=>h.some(G=>Y.title?.[t]?.toLowerCase().includes(G.toLowerCase())))),v&&(k=k.filter(Y=>Y.type==="group")),x&&(k=k.filter(Y=>Y.type==="individual"));const R={deals_first:"deals",newest_first:"newest",popular_first:"popular",low_to_high:"priceLowHigh",high_to_low:"priceHighLow"}[l]||"";return R==="deals"?k=k.filter(Y=>Y.labels?.includes("15%")||Y.labels?.includes("Special Offer")).concat(k.filter(Y=>!Y.labels?.includes("15%")&&!Y.labels?.includes("Special Offer"))):R==="newest"?k=k.filter(Y=>Y.isNew).concat(k.filter(Y=>!Y.isNew)):R==="popular"?k=k.filter(Y=>Y.labels?.includes("Popular")).concat(k.filter(Y=>!Y.labels?.includes("Popular"))):R==="priceLowHigh"?k.sort((Y,G)=>Number(Y.price)-Number(G.price)):R==="priceHighLow"&&k.sort((Y,G)=>Number(G.price)-Number(Y.price)),k},[l,c,h,v,x,t]),T=(k,R)=>k==="ticket"?M.jsx(Pp,{color:"#27ae60"},R):k==="family"?M.jsx(Hp,{color:"#27ae60"},R):null;return M.jsxs(M.Fragment,{children:[M.jsxs(_y,{children:[M.jsx(j_,{children:a("toursPage.title")}),M.jsx(z_,{children:a("toursPage.subtitle")})]}),M.jsx(P_,{children:M.jsxs(H_,{children:[M.jsxs(kd,{children:[M.jsx(Rd,{children:M.jsx(h_,{})}),M.jsx(Nd,{children:a("toursPage.safe_payment")})]}),M.jsxs(kd,{children:[M.jsx(Rd,{children:M.jsx(y_,{})}),M.jsx(Nd,{children:a("toursPage.official_partners")})]}),M.jsxs(kd,{children:[M.jsx(Rd,{children:M.jsx(g_,{})}),M.jsx(Nd,{children:a("toursPage.special_offers")})]})]})}),M.jsxs(_y,{id:"tours",children:[M.jsx(D_,{sortOption:l,setSortOption:s,selectedCategories:c,setSelectedCategories:d,selectedEmirates:h,setSelectedEmirates:m,groupTour:v,setGroupTour:b,individualTour:x,setIndividualTour:C}),M.jsx(C_,{children:O.map(k=>M.jsx(Tp,{to:`/tour/${k.id}`,style:{textDecoration:"none",color:"inherit"},children:M.jsxs(M_,{children:[M.jsxs(T_,{children:[M.jsx(k_,{src:k.image.startsWith("http")?k.image:`${Ht}${k.image}`,alt:k.title[t]}),k.labels?.map((R,Y)=>M.jsx(R_,{style:R==="15%"?{backgroundColor:"#ef2325"}:{},children:a(R)},Y))]}),M.jsxs(N_,{children:[M.jsx(A_,{children:k.title[t]}),k.duration&&M.jsxs(Oy,{children:[M.jsx(zp,{})," ",k.duration[t]]}),k.icons&&M.jsx(Oy,{children:k.icons.map((R,Y)=>T(R,Y))}),M.jsxs(L_,{children:[a("from")," ",k.price," ",n]})]})]})},k.id))})]}),M.jsx(E_,{})]})},U_=fe.div`
+`,Y_=()=>{const{i18n:i,t:a}=Gn(),{currency:n}=Fu(),t=i.language,[l,s]=H.useState(""),[c,d]=H.useState([]),[h,m]=H.useState([]),[v,b]=H.useState(!1),[x,C]=H.useState(!1),O=H.useMemo(()=>{let k=[...kp];c.length>0&&(k=k.filter(Y=>c.includes(Y.category))),h.length>0&&(k=k.filter(Y=>h.some(G=>Y.title?.[t]?.toLowerCase().includes(G.toLowerCase())))),v&&(k=k.filter(Y=>Y.type==="group")),x&&(k=k.filter(Y=>Y.type==="individual"));const R={deals_first:"deals",newest_first:"newest",popular_first:"popular",low_to_high:"priceLowHigh",high_to_low:"priceHighLow"}[l]||"";return R==="deals"?k=k.filter(Y=>Y.labels?.includes("15%")||Y.labels?.includes("Special Offer")).concat(k.filter(Y=>!Y.labels?.includes("15%")&&!Y.labels?.includes("Special Offer"))):R==="newest"?k=k.filter(Y=>Y.isNew).concat(k.filter(Y=>!Y.isNew)):R==="popular"?k=k.filter(Y=>Y.labels?.includes("Popular")).concat(k.filter(Y=>!Y.labels?.includes("Popular"))):R==="priceLowHigh"?k.sort((Y,G)=>Number(Y.price)-Number(G.price)):R==="priceHighLow"&&k.sort((Y,G)=>Number(G.price)-Number(Y.price)),k},[l,c,h,v,x,t]),T=(k,R)=>k==="ticket"?M.jsx(Pp,{color:"#27ae60"},R):k==="family"?M.jsx(Hp,{color:"#27ae60"},R):null;return M.jsxs(M.Fragment,{children:[M.jsxs(_y,{children:[M.jsx(j_,{children:a("toursPage.title")}),M.jsx(z_,{children:a("toursPage.subtitle")})]}),M.jsx(P_,{children:M.jsxs(H_,{children:[M.jsxs(kd,{children:[M.jsx(Rd,{children:M.jsx(h_,{})}),M.jsx(Nd,{children:a("toursPage.safe_payment")})]}),M.jsxs(kd,{children:[M.jsx(Rd,{children:M.jsx(y_,{})}),M.jsx(Nd,{children:a("toursPage.official_partners")})]}),M.jsxs(kd,{children:[M.jsx(Rd,{children:M.jsx(g_,{})}),M.jsx(Nd,{children:a("toursPage.special_offers")})]})]})}),M.jsxs(_y,{id:"tours",children:[M.jsx(D_,{sortOption:l,setSortOption:s,selectedCategories:c,setSelectedCategories:d,selectedEmirates:h,setSelectedEmirates:m,groupTour:v,setGroupTour:b,individualTour:x,setIndividualTour:C}),M.jsx(C_,{children:O.map(k=>M.jsx(Tp,{to:`/tour/${k.id}`,style:{textDecoration:"none",color:"inherit",display:"block",height:"100%"},children:M.jsxs(M_,{children:[M.jsxs(T_,{children:[M.jsx(k_,{src:k.image.startsWith("http")?k.image:`${Ht}${k.image}`,alt:k.title[t]}),k.labels?.map((R,Y)=>M.jsx(R_,{style:R==="15%"?{backgroundColor:"#ef2325"}:{},children:a(R)},Y))]}),M.jsxs(N_,{children:[M.jsx(A_,{children:k.title[t]}),k.duration&&M.jsxs(Oy,{children:[M.jsx(zp,{})," ",k.duration[t]]}),k.icons&&M.jsx(Oy,{children:k.icons.map((R,Y)=>T(R,Y))}),M.jsxs(L_,{children:[a("from")," ",k.price," ",n]})]})]})},k.id))})]}),M.jsx(E_,{})]})},U_=fe.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
