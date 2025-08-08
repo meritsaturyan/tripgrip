@@ -801,11 +801,11 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-weight: 600;
         }
 
-        /* Инпут и кнопка — одинаковая ширина */
-        .booking-form .date-input,
-        .booking-form__btn {
+        /* Критично: растягиваем все уровни обёртки datepicker */
+        .booking-form .react-datepicker-wrapper,
+        .booking-form .react-datepicker__input-container,
+        .booking-form .date-input {
           width: 100%;
-          box-sizing: border-box;
         }
 
         .booking-form .date-input {
@@ -816,7 +816,6 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-size: 16px;
           background: #fff;
           box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-          margin-bottom: 20px;
         }
         .booking-form .date-input:focus {
           border-color: #009344;
@@ -827,17 +826,6 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           border: none;
           border-top: 1px dashed #aaa;
           margin: 24px 0;
-        }
-
-        .booking-form__btn {
-          padding: 12px;
-          background-color: #009344;
-          color: #fff;
-          border: none;
-          border-radius: 24px;
-          cursor: pointer;
-          font-size: 18px;
-          font-weight: 500;
         }
 
         .booking-form__row {
@@ -871,6 +859,18 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           gap: 16px;
           margin-bottom: 20px;
           color: #444;
+        }
+
+        .booking-form__btn {
+          width: 100%;
+          padding: 12px;
+          background-color: #009344;
+          color: #fff;
+          border: none;
+          border-radius: 24px;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: 500;
         }
 
         .booking-form__note {
