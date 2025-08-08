@@ -801,10 +801,9 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-weight: 600;
         }
 
-        /* инпут */
+        /* инпут — теперь всегда 100% ширины */
         .booking-form .date-input {
-          width: 380px; /* длиннее на ПК */
-          max-width: 100%; /* но не выходит за рамки */
+          width: 100%;
           box-sizing: border-box;
           padding: 12px 16px;
           border: 1px solid #ccc;
@@ -886,7 +885,6 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
             margin-bottom: 16px;
           }
           .booking-form .date-input {
-            width: 100%; /* на телефоне всегда 100% */
             font-size: 15px;
             padding: 10px 14px;
           }
