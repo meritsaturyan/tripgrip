@@ -791,6 +791,12 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           padding: 24px;
           width: 100%;
           box-sizing: border-box;
+          overflow-x: hidden; /* убираем горизонтальный скролл */
+        }
+
+        .booking-form * {
+          box-sizing: border-box; /* всё внутри считает паддинги в ширину */
+          max-width: 100%; /* ничего не вылезает за рамку */
         }
 
         .booking-form__title {
@@ -801,25 +807,23 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-weight: 600;
         }
 
-        /* Растягиваем input ровно как кнопку, но без выхода за рамки */
+        /* Чтобы input был ровно как кнопка */
         .booking-form .react-datepicker-wrapper {
           width: 100%;
           display: block;
         }
         .booking-form .react-datepicker__input-container {
-          display: block;
           width: 100%;
+          display: block;
         }
         .booking-form .date-input {
           width: 100%;
-          max-width: 100%;
           padding: 12px 16px;
           border: 1px solid #ccc;
           border-radius: 6px;
           outline: none;
           font-size: 16px;
           background: #fff;
-          box-sizing: border-box;
           box-shadow: 0 2px 4px rgba(0,0,0,0.08);
         }
         .booking-form .date-input:focus {
