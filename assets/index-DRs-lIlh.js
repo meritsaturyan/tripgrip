@@ -919,25 +919,22 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
   color: #1e7b3c;
   text-align: center;
 `,pk=fe(_3)`
-  width: 100%;
   max-width: 723px;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: hidden;               /* не даём раздавать ширину */
+  position: relative;
 
-  .slick-list {
-    overflow: hidden;
-  }
-
+  .slick-list,
   .slick-track {
     display: flex !important;
     align-items: center;
     justify-content: center;
   }
 
-  .slick-slide {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
+  .slick-slide { 
+    display: flex !important; 
+    justify-content: center; 
+    align-items: center; 
   }
 
   .slick-slide img {
@@ -949,49 +946,22 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
     display: block;
   }
 
-  .slick-dots li button:before {
-    color: #009344;
+  .slick-arrow { 
+    opacity: 0.6; 
+    z-index: 2; 
+  }
+  .slick-prev, .slick-next { 
+    background: none !important; 
+    border: none; 
+  }
+  .slick-prev:before, .slick-next:before { 
+    color: #000; 
+    font-size: 36px; 
   }
 
-  .slick-dots li.slick-active button:before {
-    color: #009344;
-  }
-
-  .slick-arrow {
-    opacity: 0.4;
-    z-index: 10;
-  }
-
-  .slick-prev,
-  .slick-next {
-    background: none !important;
-    border: none;
-    width: 40px;
-    height: 40px;
-    z-index: 2;
-  }
-
-  .slick-prev {
-    left: 5px !important;
-  }
-
-  .slick-next {
-    right: 5px !important;
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
-    color: black;
-    font-size: 36px;
-    line-height: 1;
-  }
-
-  @media (max-width: 480px) {
-    .slick-prev:before,
-    .slick-next:before {
-      font-size: 28px;
-    }
-  }
+  /* стрелки строго внутри контейнера */
+  .slick-prev { left: 8px; }
+  .slick-next { right: 8px; }
 `,hk=fe.div`
   margin-top: 20px;
   font-size: 1rem;
@@ -1054,4 +1024,4 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
 `,yk=fe.div`
   flex: 1;
   min-width: 0;
-`,bk=()=>{const{id:i}=US(),a=kp.find(h=>h.id===parseInt(i)),{t:n,i18n:t}=Gn(),l=t.language,s=_p(),{currency:c}=Fu(),d=H.useRef();return H.useEffect(()=>{const h=()=>{d.current?.slickGoTo(0)};return window.addEventListener("resize",h),h(),()=>window.removeEventListener("resize",h)},[]),a?M.jsxs(fk,{children:[M.jsxs(mk,{onClick:()=>s(-1),children:[M.jsx(c_,{})," ",n("Back")]}),M.jsx(dk,{children:a.title[l]}),M.jsxs(gk,{children:[M.jsxs(vk,{children:[M.jsx(pk,{ref:d,dots:!0,arrows:!0,infinite:!0,speed:500,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:3e3,children:(a.images||[a.image]).map((h,m)=>M.jsx("img",{src:`${Ht}${h}`,alt:`${a.title[l]} ${m+1}`},m))},a.id),M.jsxs(hk,{children:[M.jsxs("div",{className:"info-row",children:[M.jsx(zp,{className:"info-icon"}),M.jsx("span",{className:"info-text",children:"Full Day"})]}),M.jsxs("div",{className:"info-row",children:[M.jsx(Hp,{className:"info-icon"}),M.jsx("span",{className:"info-text",children:"Group or Individual"})]}),M.jsxs("div",{className:"info-row",children:[M.jsx(Pp,{className:"info-icon"}),M.jsxs("span",{className:"info-text",children:["From ",a.price," ",c]})]}),M.jsxs("div",{className:"info-row",children:[M.jsx(m_,{className:"info-icon"}),M.jsx("a",{className:"info-text map-link",href:"https://www.google.com/maps/place/Atlantis+The+Palm/@25.1303805,55.1171726,17z",target:"_blank",rel:"noopener noreferrer",children:"Atlantis the Palm"})]})]})]}),M.jsx(yk,{children:M.jsx(ck,{tour:a,currency:c})})]})]}):M.jsx("p",{style:{textAlign:"center"},children:n("Tour not found")})},wk=()=>{const i=H.useCallback(()=>{const n=document.getElementById("tours");n&&n.scrollIntoView({behavior:"smooth"})},[]),a=H.useCallback(()=>{const n=document.getElementById("footer");n&&n.scrollIntoView({behavior:"smooth"})},[]);return M.jsxs(Q1,{children:[M.jsx(MO,{onExcursionsClick:i,onContactClick:a}),M.jsxs(t2,{children:[M.jsx(tl,{path:"/",element:M.jsx(Y_,{})}),M.jsx(tl,{path:"/tour/:id",element:M.jsx(bk,{})}),M.jsx(tl,{path:"/search",element:M.jsx(K_,{})}),M.jsx(tl,{path:"*",element:M.jsx($_,{})})]}),M.jsx(jO,{id:"footer"})]})};uS.createRoot(document.getElementById("root")).render(M.jsx(re.StrictMode,{children:M.jsx(O2,{children:M.jsx(Q1,{children:M.jsx(wk,{})})})}));
+`,bk=()=>{const{id:i}=US(),a=kp.find(h=>h.id===parseInt(i)),{t:n,i18n:t}=Gn(),l=t.language,s=_p(),{currency:c}=Fu(),d=H.useRef();return H.useEffect(()=>{const h=()=>{d.current?.slickGoTo(0)};return window.addEventListener("resize",h),h(),()=>window.removeEventListener("resize",h)},[]),a?M.jsxs(fk,{children:[M.jsxs(mk,{onClick:()=>s(-1),children:[M.jsx(c_,{})," ",n("Back")]}),M.jsx(dk,{children:a.title[l]}),M.jsxs(gk,{children:[M.jsxs(vk,{children:[M.jsx(pk,{ref:d,dots:!0,arrows:!0,infinite:!0,speed:500,slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:3e3,children:(a.images||[a.image]).map((h,m)=>M.jsx("img",{src:`${Ht}${h}`,alt:`${a.title[l]} ${m+1}`},m))},a.id),M.jsxs(hk,{children:[M.jsxs("div",{className:"info-row",children:[M.jsx(zp,{className:"info-icon"}),M.jsx("span",{className:"info-text",children:"Full Day"})]}),M.jsxs("div",{className:"info-row",children:[M.jsx(Hp,{className:"info-icon"}),M.jsx("span",{className:"info-text",children:"Group or Individual"})]}),M.jsxs("div",{className:"info-row",children:[M.jsx(Pp,{className:"info-icon"}),M.jsxs("span",{className:"info-text",children:["From ",a.price," ",c]})]}),M.jsxs("div",{className:"info-row",children:[M.jsx(m_,{className:"info-icon"}),M.jsx("a",{className:"info-text map-link",href:"https://www.google.com/maps/place/Atlantis+The+Palm/@25.1303805,55.1171726,17z",target:"_blank",rel:"noopener noreferrer",children:"Atlantis the Palm"})]})]})]}),M.jsx(yk,{children:M.jsx(ck,{tour:a,currency:c})})]})]}):M.jsx("p",{style:{textAlign:"center"},children:n("Tour not found")})},wk=()=>{const i=H.useCallback(()=>{const n=document.getElementById("tours");n&&n.scrollIntoView({behavior:"smooth"})},[]),a=H.useCallback(()=>{const n=document.getElementById("footer");n&&n.scrollIntoView({behavior:"smooth"})},[]);return M.jsx(Q1,{children:M.jsxs("div",{style:{overflowX:"clip",width:"100%"},children:[M.jsx(MO,{onExcursionsClick:i,onContactClick:a}),M.jsxs(t2,{children:[M.jsx(tl,{path:"/",element:M.jsx(Y_,{})}),M.jsx(tl,{path:"/tour/:id",element:M.jsx(bk,{})}),M.jsx(tl,{path:"/search",element:M.jsx(K_,{})}),M.jsx(tl,{path:"*",element:M.jsx($_,{})})]}),M.jsx(jO,{id:"footer"})]})})};uS.createRoot(document.getElementById("root")).render(M.jsx(re.StrictMode,{children:M.jsx(O2,{children:M.jsx(Q1,{children:M.jsx(wk,{})})})}));
