@@ -801,10 +801,14 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-weight: 600;
         }
 
-        /* инпут — теперь всегда 100% ширины */
-        .booking-form .date-input {
+        /* Инпут и кнопка — одинаковая ширина */
+        .booking-form .date-input,
+        .booking-form__btn {
           width: 100%;
           box-sizing: border-box;
+        }
+
+        .booking-form .date-input {
           padding: 12px 16px;
           border: 1px solid #ccc;
           border-radius: 6px;
@@ -812,6 +816,7 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
           font-size: 16px;
           background: #fff;
           box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+          margin-bottom: 20px;
         }
         .booking-form .date-input:focus {
           border-color: #009344;
@@ -825,7 +830,6 @@ Please change the parent <Route path="${R}"> to <Route path="${R==="/"?"*":`${R}
         }
 
         .booking-form__btn {
-          width: 100%;
           padding: 12px;
           background-color: #009344;
           color: #fff;
